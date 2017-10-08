@@ -1,0 +1,17 @@
+.navbar {
+  background-color: white;
+  border: 1px solid darkgrey;
+}
+
+.navbar-brand img {
+  margin-top: -55px;
+}
+
+.navbar-nav>li>a{
+  color: black;
+}
+
+.navbar-nav>li>a:hover {
+  color: white;
+  background-color: saddlebrown;
+}
