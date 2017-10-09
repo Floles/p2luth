@@ -5,14 +5,20 @@ font-family: 'Source Sans Pro', sans-serif;
 
 */
 
+#body {
+    background-image: url(../images/violonbacknorm22.jpg);
+    background-size: cover;
+    
+}
+
 #h1 {
     font-family: 'Jacques Francois', serif;
-    color : black;
+    color: lightgrey;
 }
 
 p {
     font-family: 'Source Sans Pro', sans-serif;
-    color : darkgrey;
+    color: darkgrey;
     font-size: 2em;
 }
 
