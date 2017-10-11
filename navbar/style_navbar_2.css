@@ -1,17 +1,29 @@
-.navbar {
-  background-color: white;
-  border: 1px solid darkgrey;
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar, .navbar-brand {
+  height: 80px;
 }
 
 .navbar-brand img {
-  margin-top: -55px;
+  margin-top: -50px;
+  width: 150px;
 }
 
 .navbar-nav>li>a{
   color: black;
+  margin-top: 15px;
 }
 
 .navbar-nav>li>a:hover {
   color: white;
-  background-color: saddlebrown;
+  background-color: #BA8D61;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+#shadow {
+  box-shadow: 2px 3px 10px gray;
 }
