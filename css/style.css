@@ -1,43 +1,67 @@
 /* Pour les polices
 
-font-family: 'Jacques Francois', serif;
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
 
 */
 
-#body {
+body {
     background-image: url(../images/violonbacknorm22.jpg);
     background-size: cover;
+}
+
+.navbar {
+    background-color: white;
+    border: 1px solid darkgrey;
+}
+
+.navbar-brand img {
+    margin-top: -55px;
+}
+
+.navbar-nav>li>a {
+    color: darkgrey;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
     
 }
 
-#h1 {
-    font-family: 'Jacques Francois', serif;
-    color: lightgrey;
+.navbar-nav>li>a:hover {
+    color: white;
+    background-color: saddlebrown;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 3em;
+    margin-top: 50px;
 }
 
 p {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     color: darkgrey;
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: right;
 }
-
-
-
-
-
 
 
 /* Et ci-dessous pour le Responsive à venir */
 
+
 /* Extra small devices (phones, less than 768px) */
+
+
 /* No media query since this is the default in Bootstrap */
+
 
 /* Small devices (tablets, 768px and up) 
 @media (min-width: @screen-sm-min) { ... }*/
 
+
 /* Medium devices (desktops, 992px and up) 
 @media (min-width: @screen-md-min) { ... } */
+
 
 /* Large devices (large desktops, 1200px and up) 
 @media (min-width: @screen-lg-min) { ... } */
