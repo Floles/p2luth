@@ -46,6 +46,51 @@ p {
 }
 
 
+
+        .footerback {
+            background-color: white;
+        }
+
+        .logo{  
+            width: 20%;
+            height: 20%;
+        }
+
+        .fb:hover {
+        filter: grayscale(1);
+        }
+
+        .fb {
+            border-radius: 10px 5% / 20px 30px;
+        }
+
+        .craub{
+            font-style: black;
+        }
+
+        .adress{ 
+        font-style: black;
+                 }
+        
+        .contactez{
+            text-decoration: none;
+            color:inherit;
+        }
+        .contactez:hover {
+            color: #BA8D61;
+            text-decoration: none;
+        }
+
+        .mentionsl{
+            color:inherit;
+        }
+        
+        .mentionsl:hover {
+            color: #BA8D61;
+            text-decoration: none;
+        }
+
+
 /* Et ci-dessous pour le Responsive à venir */
 
 
