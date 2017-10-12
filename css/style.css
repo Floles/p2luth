@@ -15,8 +15,9 @@ body {
   padding-right: 0;
 }
 
-.navbar, .navbar-brand {
-  height: 80px;
+.navbar {
+  height: 82px;
+  background-color: white;
 }
 
 .navbar-brand img {
@@ -25,7 +26,9 @@ body {
 }
 
 .navbar-nav>li>a{
+  font-family: 'Dancing Script', cursive;
   color: black;
+  font-size: 20px;
   margin-top: 15px;
 }
 
@@ -37,7 +40,7 @@ body {
 }
 
 #shadow {
-  box-shadow: 2px 3px 10px gray;
+  border-bottom: 1px solid gray;
 }
 /*------fin navbar-------*/
 h1 {
