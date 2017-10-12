@@ -30,73 +30,77 @@
 
 <!-- Le body avec le container pour Bootstrap -->
 
+<!-- Commentaire inutile pour refaire une pull request -->
+
 <body>
     <div class="container-fluid">
 
         <!--navbar white-->
-        <nav class="navbar navbar-expand-md fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/logo_black.png" alt="Logo noir" /></a>
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav nav navbar-right">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mes créations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mon métier</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Me contacter</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav id="shadow" class="navbar navbar-expand-md fixed-top">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="img-responsive" src="https://i.imgur.com/N2dSmym.png" alt="Logo noir"/></a>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav nav navbar-right">
+                    <li role="navigation" class="nav-item active">
+                        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li role="navigation" class="nav-item">
+                        <a class="nav-link" href="#">Mes Créations</a>
+                    </li>
+                    <li role="navigation" class="nav-item">
+                        <a class="nav-link" href="#">Mon Métier</a>
+                    </li>
+                    <li role="navigation" class="nav-item">
+                        <a class="nav-link" href="#">Me contacter</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <!--fin navbar-->
 
+    <section id="accueil">
+        <div class="row">
+            <div class="col-xs-7 col-xs-offset-4">
+                <h1>Au bois - Luthier à Paris depuis 2015.<br />Bonjour et bienvenue sur mon site Internet</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-5">
+                <p>Située depuis 2015 au coeur de la rue de Rome, la boutique Au Bois - Luthier <br />vous propose des prestations de qualité de création, d'entretien et de réparation de guitares et de violoncelles.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="accueil">
+    <footer>
+
+        <div class="footerback">
             <div class="row">
-                <div class="col-xs-7 col-xs-offset-4">
-                    <h1>Au bois - Luthier à Paris depuis 2015.<br />Bonjour et bienvenue sur mon site Internet</h1>
+                <p class="col-xs-2 craub">©Aubois</p> 
+ 
+                
+    <p class="col-xs-offset-3 col-xs-7 adress"> 
+                12 rue de Rome, 75009 Paris - 06.18.54.29.12 
+                </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6 col-xs-offset-5">
-                    <p>Située depuis 2015 au coeur de la rue de Rome, la boutique Au Bois - Luthier <br />vous propose des prestations de qualité de création, d'entretien et de réparation de guitares et de violoncelles.</p>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            
-            <div class="container footerback">
-                <div class="row">
-                    <p class="col-xs-1 craub">©Aubois</p> <a class="col-xs-2 mentionsl" href="mentionsl.html">Mentions légales.</a>
-                    <p class="col-xs-offset-1 col-xs-5 adress"> 
-                        12 rue de Rome, 75009 Paris - 06.18.54.29.12 </p>
-            <div class="col-offset-3 col-xs-2">
-                        <a class="contactez" href="contact.html"> Contactez-Nous!</a>
-            </div>
-                    
-
-                    <div class= "col-xs-offset-2 col-xs-1"> <img src="https://i.imgur.com/8p79IjB.png" class="fb" /> 
-                        <!--class="col-xs-offset-1 col-xs-1 logo"--> <!--class="col-xs-1"-->
-                    </div>
-                </div>
-            </div>
-            <!-- En attente éléments de Daphné -->
-
-        </footer>
-
-        <!-- Le script Bootstrap -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-        <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
-
+<div class="row">
+     <a class="col-xs-3 mentionsl" href="mentionsl.html"> Mentions légales.</a>
+     <a class="col-xs-offset-3 col-xs-2 contactez" href="contact.html">Me contacter </a>
+  <div class="col-xs-offset-3 col-xs-1 fb">
+  <img src="https://i.imgur.com/8p79IjB.png"/>
+  </div>
+</div>
     </div>
+        <!-- En attente éléments de Daphné -->
+
+    </footer>
+
+    <!-- Le script Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+
+</div>
 
 </body>
 
