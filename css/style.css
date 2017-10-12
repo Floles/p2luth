@@ -8,6 +8,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 body {
     background-image: url(../images/violonbacknorm22.jpg);
     background-size: cover;
+    overflow: hidden;
 }
 /*---navbar-------*/
 .container-fluid {
@@ -54,7 +55,7 @@ p {
     font-family: 'Open Sans Condensed', sans-serif;
     color: darkgrey;
     font-size: 1.5em;
-    text-align: right;
+    text-align: justify;
 }
 
 
