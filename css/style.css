@@ -11,7 +11,9 @@ body {
   background-size: cover;
   overflow: hidden;
 }
+
 /*---navbar-------*/
+
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -27,25 +29,28 @@ body {
   width: 150px;
 }
 
-.navbar-nav>li>a{
+.navbar-nav > li > a {
   font-family: 'Dancing Script', cursive;
   color: black;
   font-size: 20px;
   margin-top: 15px;
 }
 
-.navbar-nav>li>a:hover {
+.navbar-nav > li > a:hover {
   color: white;
   background-color: #BA8D61;
   transition: all 0.5s;
   border-radius: 5px;
 }
+
 /*------fin navbar-------*/
 
 #shadow {
   border-bottom: 1px solid gray;
 }
+
 /*------fin navbar-------*/
+
 h1 {
   font-family: 'Dancing Script', cursive;
   color: white;
@@ -54,79 +59,44 @@ h1 {
 }
 
 p {
-    font-family: 'Open Sans Condensed', sans-serif;
-    color: lightgrey;
-    font-size: 1.5em;
-    text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: lightgrey;
+  font-size: 1.5em;
+  text-align: center;
 }
 
-/*---footer------*/
+/*----footer-----*/
 
-.footerback {
-  background-color: white;
-  height: 82px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+#brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
+  font-weight: 700;
+  margin-left: 25px;
+  margin-top: 15px;
 }
 
-.logo{  
-  width: 20%;
-  height: 20%;
-}
-
-.fb:hover {
-  filter: grayscale(1);
-}
-
-.fb {
-  border-radius: 10px 5% / 20px 30px;
-}
-
-.craub{
-  font-style: black;
-}
-
-.adress{ 
-  font-style: black;
-}
-
-.contactez{
-  font-family:'Open Sans Condensed', sans-serif;
-  text-decoration: none;
-  color:inherit;
-}
-.contactez:hover {
+#brand:hover {
   color: #BA8D61;
-  text-decoration: none;
 }
 
-.mentionsl{
-  color:inherit;
-  font-family:'Open Sans Condensed', sans-serif;
+.navbar-right {
+  padding-right: 20px;
 }
 
-.mentionsl:hover {
-  color: #BA8D61;
-  text-decoration: none;
-}
+.navbar-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  padding: 15px;
+  margin-left: 150px;
+  color: black;
 
-/* Et ci-dessous pour le Responsive à venir */
-
-
-/* Extra small devices (phones, less than 768px) */
-
-
-/* No media query since this is the default in Bootstrap */
-
-
-/* Small devices (tablets, 768px and up) 
+  /*---footer------*/
+  /* Et ci-dessous pour le Responsive à venir */
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default in Bootstrap */
+  /* Small devices (tablets, 768px and up) 
 @media (min-width: @screen-sm-min) { ... }*/
-
-
-/* Medium devices (desktops, 992px and up) 
+  /* Medium devices (desktops, 992px and up) 
 @media (min-width: @screen-md-min) { ... } */
-
-
-/* Large devices (large desktops, 1200px and up) 
+  /* Large devices (large desktops, 1200px and up) 
 @media (min-width: @screen-lg-min) { ... } */
