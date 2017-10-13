@@ -6,6 +6,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 */
 
 body {
+
   background-image: url(../images/violonbacknorm22.jpg);
   background-size: cover;
   overflow: hidden;
@@ -39,12 +40,12 @@ body {
   transition: all 0.5s;
   border-radius: 5px;
 }
+/*------fin navbar-------*/
 
 #shadow {
   border-bottom: 1px solid gray;
 }
 /*------fin navbar-------*/
-
 h1 {
   font-family: 'Dancing Script', cursive;
   color: white;
@@ -53,10 +54,10 @@ h1 {
 }
 
 p {
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: darkgrey;
-  font-size: 1.5em;
-  text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: darkgrey;
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 /*---footer------*/
