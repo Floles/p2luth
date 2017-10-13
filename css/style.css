@@ -6,11 +6,14 @@ font-family: 'Open Sans Condensed', sans-serif;
 */
 
 body {
-    background-image: url(../images/violonbacknorm22.jpg);
-    background-size: cover;
-    overflow: hidden;
+
+  background-image: url(../images/violonbacknorm22.jpg);
+  background-size: cover;
+  overflow: hidden;
 }
+
 /*---navbar-------*/
+
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
@@ -26,36 +29,40 @@ body {
   width: 150px;
 }
 
-.navbar-nav>li>a{
+.navbar-nav > li > a {
   font-family: 'Dancing Script', cursive;
   color: black;
   font-size: 20px;
   margin-top: 15px;
 }
 
-.navbar-nav>li>a:hover {
+.navbar-nav > li > a:hover {
   color: white;
   background-color: #BA8D61;
   transition: all 0.5s;
   border-radius: 5px;
 }
 
+/*------fin navbar-------*/
+
 #shadow {
   border-bottom: 1px solid gray;
 }
+
 /*------fin navbar-------*/
+
 h1 {
-    font-family: 'Dancing Script', cursive;
-    color: white;
-    font-size: 3em;
-    margin-top: 50px;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  font-size: 3em;
+  margin-top: 20px;
 }
 
 p {
-    font-family: 'Open Sans Condensed', sans-serif;
-    color: darkgrey;
-    font-size: 1.5em;
-    text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: lightgrey;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 /*----footer-----*/
@@ -83,22 +90,13 @@ p {
   margin-left: 150px;
   color: black;
 
-/* Et ci-dessous pour le Responsive à venir */
-
-
-/* Extra small devices (phones, less than 768px) */
-
-
-/* No media query since this is the default in Bootstrap */
-
-
-/* Small devices (tablets, 768px and up) 
+  /*---footer------*/
+  /* Et ci-dessous pour le Responsive à venir */
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default in Bootstrap */
+  /* Small devices (tablets, 768px and up) 
 @media (min-width: @screen-sm-min) { ... }*/
-
-
-/* Medium devices (desktops, 992px and up) 
+  /* Medium devices (desktops, 992px and up) 
 @media (min-width: @screen-md-min) { ... } */
-
-
-/* Large devices (large desktops, 1200px and up) 
+  /* Large devices (large desktops, 1200px and up) 
 @media (min-width: @screen-lg-min) { ... } */
