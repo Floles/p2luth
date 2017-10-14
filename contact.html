@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stylec.css" />
   <link rel="stylesheet" href="js/js.js" />
 
   <!-- L'appel du favicon -->
@@ -63,51 +63,64 @@
       </div>
     </nav>
     <!--fin navbar-->
-    <section id="accueil">
+    <section id="title">
       <div class="row">
-        <div class="col-xs-7 col-xs-offset-4">
-          <h1>Au Bois - Luthier à Paris depuis 2015.<br/>Bonjour et bienvenue sur mon site internet</h1>
+        <div class="col-xs-12 text-center">
+          <h1><span id="titrec">Comment me contacter?</span></h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-5 col-xs-offset-5">
-          <p>Située au coeur de la rue de Rome, la boutique "Au Bois - Luthier" <br />vous propose des prestations de qualité de création, d'entretien et de réparation de guitares et de violoncelles.</p>
-        </div>
-      </div>
-    </section>
-    <!--footer-->
-    <footer>
+      </section>
 
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a id="brand" class="navbar-brand" href="#">Au Bois</a>
+
+      <section id="Inputs">
+
+      <div class="row form">
+
+        <div class="col-xs-5 col-xs-offset-1 ">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="@exemple.com" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2">Votre email</span>
           </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul id="remonte" class="nav navbar-nav">
-              <p class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Mentions Légales</a></li>
-              <li><a href="#">Me contacter</a></li>
-            </ul>
+          <div class="form-group">
+            <label for="comment">Ecrivez votre message ici:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
         </div>
-      </nav>
-    </footer>
-    <!--fin footer-->
-    <!-- Le script Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      </section>
+      <!--footer-->
+      <footer>
 
-    <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a id="brand" class="navbar-brand" href="#">Au Bois</a>
+            </div>
 
-  </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul id="remonte" class="nav navbar-nav">
+                <p class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Mentions Légales</a></li>
+                <li><a href="#">Me contacter</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </footer>
+      <!--fin footer-->
+      <!-- Le script Bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+
+    </div>
 
 
-</body>
+  </body>
 
 
-</html>
+  </html>

@@ -1,0 +1,113 @@
+/* Pour les polices
+
+font-family: 'Dancing Script', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+
+*/
+
+body {
+  background-color: white;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/*---navbar-------*/
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar {
+  height: 82px;
+  background-color: white;
+}
+
+.navbar-brand img {
+  margin-top: -50px;
+  width: 150px;
+}
+
+.navbar-nav > li > a {
+  font-family: 'Dancing Script', cursive;
+  color: black;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.navbar-nav > li > a:hover {
+  color: white;
+  background-color: #dfc198;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+/*------fin navbar-------*/
+
+#shadow {
+  border-bottom: 1px solid gray;
+}
+
+/*------fin navbar-------*/
+
+#titrec {
+  font-family: 'Dancing Script', cursive;
+  color: black;
+  font-size: 3em;
+  margin-top: 20px;
+}
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: lightgrey;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/*----footer-----*/
+
+#brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
+  font-weight: 700;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+#brand:hover {
+  color: #dfc198;
+}
+
+.navbar-right {
+  padding-right: 20px;
+}
+
+.navbar-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  padding: 15px;
+  margin-left: 150px;
+  color: black;
+}
+/*------fin footer-------*/
+
+/*------Contact-------*/
+
+.form{
+  padding-top: 20px;
+}
+#basic-addon2 {
+  background-color: #dfc198;
+  color: white;
+}
+
+  /*---footer------*/
+  /* Et ci-dessous pour le Responsive à venir */
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default in Bootstrap */
+  /* Small devices (tablets, 768px and up) 
+@media (min-width: @screen-sm-min) { ... }*/
+  /* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) { ... } */
+  /* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { ... } */
