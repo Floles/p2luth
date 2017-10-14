@@ -22,6 +22,7 @@ body {
 .navbar {
   height: 82px;
   background-color: white;
+  border-radius: 0;
 }
 
 .navbar-brand img {
