@@ -28,6 +28,8 @@
   <!-- Les Google fonts choisies ensemble -->
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Open+Sans+Condensed:300,700&amp;subset=latin-ext" rel="stylesheet">
 
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+
   <title>Au bois - Luthier</title>
 </head>
 <!-- Fin balise Head -->
@@ -69,58 +71,78 @@
           <h1><span id="titrec">Comment me contacter?</span></h1>
         </div>
       </div>
-      </section>
+    </section>
 
 
-      <section id="Inputs">
+    <section id="Inputs">
 
-      <div class="row form">
+      <div class="row ">
 
-        <div class="col-xs-5 col-xs-offset-1 ">
+        <div class="col-xs-5 col-xs-offset-1 form">
+
           <div class="input-group">
             <input type="text" class="form-control" placeholder="@exemple.com" aria-describedby="basic-addon2">
             <span class="input-group-addon" id="basic-addon2">Votre email</span>
           </div>
 
           <div class="form-group">
-            <label for="comment">Ecrivez votre message ici:</label>
+            <p>Ecrivez votre message ici:</p>
             <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
-        </div>
-      </section>
-      <!--footer-->
-      <footer>
-
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a id="brand" class="navbar-brand" href="#">Au Bois</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul id="remonte" class="nav navbar-nav">
-                <p class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Mentions Légales</a></li>
-                <li><a href="#">Me contacter</a></li>
-              </ul>
-            </div>
+          <div class="text-center">
+            <form method="post" action="">
+              <!-- BOITE RECAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6LeuNQITAAAAAPGRU7dkrCPIrrR64WPvzMc7pn6Z">
+                </div>
+            <input type="submit" class="input-group-addon valider" id="basic-addon2"   value="valider" />
+            </form>
           </div>
-        </nav>
-      </footer>
-      <!--fin footer-->
-      <!-- Le script Bootstrap -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      </div>
 
-      <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+      <div class="col-xs-5 col-xs-offset-1 ">
+        <div id="adminc" class="text-center">
+          <h2>Infos pratiques</h2>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+
+      </div>
 
     </div>
+    
+  </section>
+  <!--footer-->
+  <footer>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="brand" class="navbar-brand" href="#">Au Bois</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul id="remonte" class="nav navbar-nav">
+            <p class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Mentions Légales</a></li>
+            <li><a href="#">Me contacter</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </footer>
+  <!--fin footer-->
+  <!-- Le script Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+
+</div>
 
 
-  </body>
+</body>
 
 
-  </html>
+</html>
