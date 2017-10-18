@@ -41,7 +41,7 @@
   <div class="container-fluid">
 
     <!--navbar white-->
-    <nav id="shadow" class="navbar navbar-expand-md fixed-top">
+    <nav id="shadow" class="navbar navbar-expand-md navbar-fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img class="img-responsive" src="https://i.imgur.com/N2dSmym.png" alt="Logo noir"/></a>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -62,6 +62,26 @@
         </div>
       </div>
     </nav>
+    <!--menu burger apple-->
+    <div class="window">
+      <div class="header">
+        <div class="burger-container">
+          <div id="burger">
+            <div class="bar topBar"></div>
+            <div class="bar btmBar"></div>
+          </div>
+        </div>
+        
+        <ul class="menu">
+          <li class="menu-item"><a href="#">Accueil</a></li>
+          <li class="menu-item"><a href="#">Mes Créations</a></li>
+          <li class="menu-item"><a href="#">Mon Métier</a></li>
+          <li class="menu-item"><a href="#">Me Contacter</a></li>
+        </ul>
+      </div>
+    </div>
+  <!--fin menu burger apple-->
+
     <!--fin navbar-->
     <section id="accueil">
       <div class="row">
@@ -76,38 +96,42 @@
       </div>
     </section>
     <!--footer-->
-    <footer>
-
-      <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a id="brand" class="navbar-brand" href="#">Au Bois</a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul id="remonte" class="nav navbar-nav">
-              <p class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Mentions Légales</a></li>
-              <li><a href="#">Me contacter</a></li>
-            </ul>
-          </div>
+    <footer id="footer" class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="brand" class="navbar-brand" href="#">Au Bois</a>
         </div>
-      </nav>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <p id="txt" class="navbar-text navbar-right">12, rue de rome 75009 Paris FRANCE - <a id="num" href="#" class="navbar-link">+33 06.18.54.29.12</a></p>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="fb" href="#"><img src="https://i.imgur.com/8p79IjB.png"/></a></li>
+            <li><a id="ml" href="#">Mentions Légales</a></li>
+            <li><a id="mc" href="#">Me contacter</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
     <!--fin footer-->
     <!-- Le script Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
+    
+     <script>(function(){
+      var burger = document.querySelector('.burger-container'),
+      header = document.querySelector('.header');
+
+      burger.onclick = function() {
+        header.classList.toggle('menu-opened');
+      }
+    }());
+    </script><!-- Les autres scripts JS au cas où - Question : est-ce qu'il faut les mettre avant ou après Bootstrap ? -->
 
   </div>
 
-
 </body>
-
-
 </html>
