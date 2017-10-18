@@ -40,7 +40,7 @@ body {
 
 .navbar-nav > li > a:hover {
   color: white;
-  background-color: #BA8D61;
+  background-color: #dfc198;
   transition: all 0.5s;
   border-radius: 5px;
 }
@@ -58,7 +58,7 @@ h1 {
   font-family: 'Dancing Script', cursive;
   color: white;
   font-size: 3em;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 
 p {
@@ -112,7 +112,7 @@ footer div {
 }
 
 #brand:hover {
-  color: #BA8D61;
+  color: #dfc198;
 }
 
 .navbar-right {
@@ -147,7 +147,7 @@ footer div {
 }
 
 #ml:hover {
-  color: #BA8D61;
+  color: #dfc198;
 }
 
 #mc {
@@ -155,7 +155,7 @@ footer div {
 }
 
 #mc:hover {
-  color: #BA8D61;
+  color: #dfc198;
 }
 
 /*---footer------*/
@@ -289,7 +289,7 @@ footer div {
     width: 100%;
   }
   .window .header.menu-opened {
-    height: 35%;
+    height: 70%;
     background-color: #000;
     -webkit-transition: all 0.3s ease-in, background 0.5s ease-in;
     transition: all 0.3s ease-in, background 0.5s ease-in;
