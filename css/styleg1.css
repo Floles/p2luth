@@ -1,0 +1,179 @@
+/* --- WCS Paris Late 2017 Projet 2 Au bois - Luthier Equipe CDFPA
+Ceci est la feuille de style de la page gabarit1.html --- */
+
+
+/* Pour les polices
+font-family: 'Dancing Script', cursive;
+font-family: 'Open Sans Condensed', sans-serif;
+*/
+
+
+/* --- Début Navbar ---*/
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    height: 82px;
+    background-color: white;
+}
+
+.navbar-brand img {
+    margin-top: -50px;
+    width: 150px;
+}
+
+.navbar-nav>li>a {
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.navbar-nav>li>a:hover {
+    color: white;
+    background-color: #dfc198;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+
+/* --- Fin Navbar --- */
+
+#shadow {
+    border-bottom: 1px solid gray;
+}
+
+
+/* --- Fin Navbar --- */
+
+
+/* --- Début Page Garabit 1 Section centrale --- */
+
+#container {
+    margin-top: 0px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: black;
+    font-size: 3em;
+    text-align: center;
+}
+
+.crea {
+    font-size: 2em;
+}
+
+.center-block {
+    border-radius: 5px;
+}
+
+.center-block:hover {
+    opacity: 0.5;
+    transition: all 0.5s;
+    border-radius: 5px;
+}
+
+p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.col-xs-4 {
+    margin-top: 60px;
+    text-align: center;
+    color: darkgrey;
+}
+
+.col-xs-4:hover {
+    color: black;
+}
+
+.modeles:hover {
+    color: white;
+    background-color: #dfc198;
+    transition: all 0.5s;
+    border-radius: 5px;  
+}
+
+
+/* --- Fin Page Garabit 1 Section centrale --- */
+
+
+/* --- footer --- */
+
+.footerback {
+    display: none;
+    background-color: white;
+    height: 82px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.logo {
+    width: 20%;
+    height: 20%;
+}
+
+.fb:hover {
+    filter: grayscale(1);
+}
+
+.fb {
+    border-radius: 10px 5% / 20px 30px;
+}
+
+.craub {
+    font-style: black;
+}
+
+.adress {
+    font-style: black;
+}
+
+.contactez {
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contactez:hover {
+    color: #BA8D61;
+    text-decoration: none;
+}
+
+.mentionsl {
+    color: inherit;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.mentionsl:hover {
+    color: #BA8D61;
+    text-decoration: none;
+}
+
+
+/* Et ci-dessous pour le Responsive à venir */
+
+
+/* Extra small devices (phones, less than 768px) */
+
+
+/* No media query since this is the default in Bootstrap */
+
+
+/* Small devices (tablets, 768px and up) 
+@media (min-width: @screen-sm-min) { ... }*/
+
+
+/* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) { ... } */
+
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { ... } */
