@@ -6,9 +6,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 */
 
 body {
-  background-image: url(../images/violonbacknorm22.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: white;
   overflow-x: hidden;
 }
 
@@ -52,44 +50,71 @@ body {
   display: none;
 }
 /*------fin navbar-------*/
-
-h1 {
+h1{
   font-family: 'Dancing Script', cursive;
-  color: white;
+  color: black;
   font-size: 3em;
-  margin-top: 120px;
+  margin-top: 1px;
 }
 
 p {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: grey;
-  font-size: 1.5em;
-  text-align: center;
-}
-
-section div h2 {
-  font-family: 'Dancing Script', cursive;
-  margin-top: 100px;
-  margin-bottom: 80px;
-  font-size: 48px;
-  text-align: center;
-}
-
-.resize {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 5px;
-}
-
-.img_text {
-  max-width: 100%;
-  padding-bottom: 20px;
-  font-size: 18px;
-  text-align: justify;
-  color: black;
+  color: lightgrey;
+  font-size: 140%;
 }
 
 /*----footer-----*/
+
+#brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 35px;
+  font-weight: 700;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+#brand:hover {
+  color: #dfc198;
+}
+
+.navbar-right {
+  padding-right: 20px;
+}
+
+.navbar-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  padding: 15px;
+  margin-left: 150px;
+  color: black;
+}
+/*------fin footer-------*/
+
+/*------Contact-------*/
+.normap{
+   width: 83%;
+   height: 243px;
+}
+.form{
+  padding-top: 25px;
+}
+
+.valc{
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  border-width: 1px;
+  margin-top: 13px; 
+  margin-bottom: 15px; 
+}
+
+h2{
+  font-family: 'Dancing Script', cursive;
+  color: black;
+  font-size: 175%;
+  margin-top: 20px;
+}
+/*------Fin Contact-------*/
 
 footer div {
   height: 82px;
@@ -156,14 +181,50 @@ footer div {
 #mc:hover {
   color: #dfc198;
 }
-
-/*---footer------*/
 @media screen and (max-width: 768px) {
   
+  .flexo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .exp{
+    height: 50px;
+  }
+  .valc{
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  border-width: 1px;
+  margin-top: 0pc;
+  } 
+  p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: lightgrey;
+  font-size: 16px;
+}
+
+  #rc-imageselect, .g-recaptcha { 
+  transform:scale(0.2); 
+  transform-origin:0; 
+   -webkit-transform:scale(0.2); 
+   transform:scale(0.4); 
+   -webkit-transform-origin:0 0; 
+   transform-origin:0 0; }
+  
+  .normap{
+   height: 150px;
+  }
+  .butmail{
+  display: none;
+  }
   nav {
     display: none;
   }
   
+  #title {
+    margin-top: 50px;
+  }
   .window {
     display: block;
     width: 100%;
@@ -172,7 +233,7 @@ footer div {
     background: #0000;
   }
   .window .header {
-    position: absolute;
+    position: fixed;
     display: block;
     top: 0;
     left: 0;
@@ -184,7 +245,7 @@ footer div {
     transition: all 0.5s ease-out, background 1s ease-out;
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
-    z-index: 1;
+    z-index: 3;
   }
   .window .header .burger-container {
     position: relative;
@@ -349,18 +410,13 @@ footer div {
 
 }
 
-
-/* Et ci-dessous pour le Responsive à venir */
-
-/* Extra small devices (phones, less than 768px) */
-
-/* No media query since this is the default in Bootstrap */
-
-/* Small devices (tablets, 768px and up) 
+  /*---footer------*/
+  /* Et ci-dessous pour le Responsive à venir */
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default in Bootstrap */
+  /* Small devices (tablets, 768px and up) 
 @media (min-width: @screen-sm-min) { ... }*/
-
-/* Medium devices (desktops, 992px and up) 
+  /* Medium devices (desktops, 992px and up) 
 @media (min-width: @screen-md-min) { ... } */
-
-/* Large devices (large desktops, 1200px and up) 
+  /* Large devices (large desktops, 1200px and up) 
 @media (min-width: @screen-lg-min) { ... } */
