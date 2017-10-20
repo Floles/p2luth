@@ -7,9 +7,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 
 body {
 
-  background-image: url(../images/violonbacknorm22.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: white;
   overflow-x: hidden;
 }
 
