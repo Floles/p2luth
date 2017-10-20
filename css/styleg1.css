@@ -47,6 +47,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     display: none;
 }
 
+
 /* --- Fin Navbar --- */
 
 
@@ -96,6 +97,7 @@ p {
     transition: all 0.5s;
     border-radius: 5px;
 }
+
 
 /* --- Fin Page Garabit 1 Section centrale --- */
 
@@ -167,6 +169,7 @@ footer div {
 #mc:hover {
     color: #dfc198;
 }
+
 
 /* --- Fin Footer --- */
 
