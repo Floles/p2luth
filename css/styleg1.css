@@ -2,10 +2,10 @@
 Ceci est la feuille de style de la page gabarit1.html --- */
 
 
-/* Pour les polices
+/* --- Pour les polices
 font-family: 'Dancing Script', cursive;
 font-family: 'Open Sans Condensed', sans-serif;
-*/
+--- */
 
 
 /* --- Début Navbar ---*/
@@ -39,22 +39,18 @@ font-family: 'Open Sans Condensed', sans-serif;
     border-radius: 5px;
 }
 
-
-/* --- Fin Navbar --- */
-
 #shadow {
     border-bottom: 1px solid gray;
 }
 
+.window {
+    display: none;
+}
 
 /* --- Fin Navbar --- */
 
 
 /* --- Début Page Garabit 1 Section centrale --- */
-
-#container {
-    margin-top: 0px;
-}
 
 h1 {
     font-family: 'Dancing Script', cursive;
@@ -68,6 +64,7 @@ h1 {
 }
 
 .center-block {
+    width: 200px;
     border-radius: 5px;
 }
 
@@ -97,65 +94,81 @@ p {
     color: white;
     background-color: #dfc198;
     transition: all 0.5s;
-    border-radius: 5px;  
+    border-radius: 5px;
 }
-
 
 /* --- Fin Page Garabit 1 Section centrale --- */
 
 
-/* --- footer --- */
+/* --- Début Footer --- */
 
-.footerback {
-    display: none;
-    background-color: white;
+footer div {
     height: 82px;
-    width: 100%;
-    position: absolute;
+}
+
+#footer {
     bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
 }
 
-.logo {
-    width: 20%;
-    height: 20%;
+#brand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 25px;
+    margin-top: 12px;
+    color: black;
 }
 
-.fb:hover {
-    filter: grayscale(1);
+#brand:hover {
+    color: #dfc198;
 }
 
-.fb {
-    border-radius: 10px 5% / 20px 30px;
+.navbar-right {
+    padding-right: 20px;
 }
 
-.craub {
-    font-style: black;
+#txt {
+    color: black;
 }
 
-.adress {
-    font-style: black;
+.navbar-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 16px;
+    padding: 13px;
+    margin-left: 150px;
 }
 
-.contactez {
-    font-family: 'Open Sans Condensed', sans-serif;
-    text-decoration: none;
-    color: inherit;
+#num {
+    color: black
 }
 
-.contactez:hover {
-    color: #BA8D61;
-    text-decoration: none;
+#fb {
+    margin-top: 8px;
 }
 
-.mentionsl {
-    color: inherit;
-    font-family: 'Open Sans Condensed', sans-serif;
+#fb:hover {
+    filter: grayscale(0.8);
 }
 
-.mentionsl:hover {
-    color: #BA8D61;
-    text-decoration: none;
+#ml {
+    color: black;
 }
+
+#ml:hover {
+    color: #dfc198;
+}
+
+#mc {
+    color: black;
+}
+
+#mc:hover {
+    color: #dfc198;
+}
+
+/* --- Fin Footer --- */
 
 
 /* Et ci-dessous pour le Responsive à venir */
