@@ -92,8 +92,8 @@ p {
 
 /*------Contact-------*/
 .normap{
-   width: 400px;
-   height: 265px;
+   width: 83%;
+   height: 243px;
 }
 .form{
   padding-top: 25px;
@@ -104,7 +104,8 @@ p {
   color: black;
   border-radius: 3px;
   border-width: 1px;
-  margin-top: 5px; 
+  margin-top: 13px; 
+  margin-bottom: 15px; 
 }
 
 h2{
@@ -195,11 +196,12 @@ footer div {
   color: black;
   border-radius: 3px;
   border-width: 1px;
+  margin-top: 0pc;
   } 
   p {
   font-family: 'Open Sans Condensed', sans-serif;
   color: lightgrey;
-  font-size: 80%;
+  font-size: 16px;
 }
 
   #rc-imageselect, .g-recaptcha { 
@@ -211,7 +213,6 @@ footer div {
    transform-origin:0 0; }
   
   .normap{
-   width: 150px;
    height: 150px;
   }
   .butmail{
