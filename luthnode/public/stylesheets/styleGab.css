@@ -82,6 +82,10 @@ section div h2 {
   list-style: none;
 }
 
+.caracteristique h4 {
+  text-decoration: underline;
+}
+
 .resize {
   max-width: 95%;
   max-height: 95%;
@@ -91,7 +95,7 @@ section div h2 {
 .img_text {
   max-width: 90%;
   padding-bottom: 20px;
-  /*font-size: 18px;*/
+  font-size: 18px;
   text-align: justify;
   color: black;
 }
@@ -398,6 +402,7 @@ footer div {
   }
   .caracteristique {
     margin-left: 65px;
+    font-size: 14px;
   }
   .resize {
     max-width: 160%;
