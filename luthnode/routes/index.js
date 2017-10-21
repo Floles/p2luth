@@ -41,24 +41,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* A compléter GET page accueil admin. */
+/* A compléter GET page accueil admin. 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* A compléter GET page admin connected. */
+/* A compléter GET page admin connected.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* A compléter GET page admin error. */
+/* A compléter GET page admin error.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* A compléter GET page admin disconnected. */
+/* A compléter GET page admin disconnected.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+*/
 module.exports = router;
