@@ -1,14 +1,14 @@
-var express = require('express');
+/*var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
 
-/*const connection = mysql.createConnection({
+const connection = mysql.createConnection({
  	host     : 'localhost',
 	user     : 'root',
 	password : 'root',
 	database : 'groupe2'
 });
-*/
+
 
 router.get('/', function(req, res, next) {
 	// Page de connexion
@@ -69,4 +69,4 @@ router.get('/adminToto', function(req, res, next) {
   }
 });
 
-module.exports = router;
+module.exports = router;*/
