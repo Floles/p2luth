@@ -7,17 +7,21 @@ router.get('/', function(req, res, next) {
 
 /* A valider GET page Mes créations. */
 router.get('/gabarit1', function(req, res, next) {
-  res.render('gabarit1.pug');
+  res.render('gabarit1');
 });
 
 /* A valider GET page Me contacter. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact.pug');
+  res.render('contact');
 });
 
 /* A valider GET page Produit. */
 router.get('/gabaritpdt', function(req, res, next) {
-  res.render('gabaritpdt.pug');
+  res.render('gabaritpdt');
+});
+
+router.get('/mentions-legales', function(req, res, next) {
+  res.render('mentionslegales');
 });
 
 
