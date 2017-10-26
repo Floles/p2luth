@@ -21,5 +21,4 @@ router.get('/gabaritpdt', function(req, res, next) {
 });
 
 
-
 module.exports = router;

@@ -9,8 +9,8 @@ body {
   background-image: url(../images/violonbacknorm22.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  overflow-x: hidden;
 }
+
 
 /*---navbar-------*/
 
@@ -62,7 +62,7 @@ h1 {
 
 p {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: grey;
+  color: White;
   font-size: 1.5em;
   text-align: center;
 }
@@ -158,12 +158,30 @@ footer div {
 }
 
 /*---footer------*/
-@media screen and (max-width: 768px) {
+@media all and (min-width: 769px) and (max-width: 1137px) {
+  .img_text {
+    font-size: 16px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .caracteristique {
+    font-size: 13px;
+  }
+}
+@media all and (max-width: 768px) {
   
   nav {
     display: none;
   }
+
+  footer {
+    display: none;
+  }
   
+  nav {
+    display: none;
+  }
+
   .window {
     display: block;
     width: 100%;
@@ -349,7 +367,41 @@ footer div {
 
 }
 
+@media all and (max-width: 480px) { 
+#accueil {
+float: none; 
+width: auto; 
+font-size: 13px;  
+background-color: black;
+ }
+}
 
+@media all and (min-width: 481px) and (max-width: 780px) {
+#accueil {
+  float: none; 
+  width: auto; 
+  font-size: 13px; 
+  background-color: black; }
+}
+
+@media all and (min-width: 781px) and (max-width: 1137px)
+{
+  #accueil {
+  float: none; 
+  width: auto; 
+  font-size: 15px;
+  background-color: black; }
+ }
+ 
+ @media all and (min-width: 1138px){
+ #accueil {
+  float: none; 
+  width: auto; 
+  }
+}
+
+/*.h1acc {float: none; width: auto; font-size: auto; }
+.pp {float: none; width: auto; font-size: auto;}*/
 /* Et ci-dessous pour le Responsive à venir */
 
 /* Extra small devices (phones, less than 768px) */
