@@ -6,22 +6,17 @@ router.get('/', function(req, res, next) {
 });
 
 /* A valider GET page Mes créations. */
-router.get('/', function(req, res, next) {
+router.get('/gabarit1', function(req, res, next) {
   res.render('gabarit1.pug');
 });
 
-/* A compléter GET page Mon métier. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-
 /* A valider GET page Me contacter. */
-router.get('/', function(req, res, next) {
+router.get('/contact', function(req, res, next) {
   res.render('contact.pug');
 });
 
 /* A valider GET page Produit. */
-router.get('/', function(req, res, next) {
+router.get('/gabaritpdt', function(req, res, next) {
   res.render('gabaritpdt.pug');
 });
 
