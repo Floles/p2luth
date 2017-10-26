@@ -68,5 +68,15 @@ router.get('/adminToto', function(req, res, next) {
   	res.redirect("/");
   }
 });
+/* A compléter GET page admin error.
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
+/* A compléter GET page admin disconnected.
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+<<<<<<< HEAD
 module.exports = router;*/
