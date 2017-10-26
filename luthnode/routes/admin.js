@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
 
@@ -8,7 +8,7 @@ const mysql = require('mysql');
 	password : 'root',
 	database : 'groupe2'
 });
-*/
+
 
 router.get('/', function(req, res, next) {
 	// Page de connexion
@@ -68,5 +68,15 @@ router.get('/adminToto', function(req, res, next) {
   	res.redirect("/");
   }
 });
+/* A compléter GET page admin error.
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+/* A compléter GET page admin disconnected.
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 module.exports = router;
+*/
