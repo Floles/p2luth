@@ -28,8 +28,13 @@ router.get('/create', function(req, res, next) {
 });
 
 // POST /admin/create
-router.post('/create', function(req, res, next) {
+router.post('/create', upload.single('produit_image'), function(req, res, next) {
 	// Création d'article
+	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
+		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
+	} else {
+		res.send('Vous avez fait une erreur dans le téléchargement');
+	}
 	connection.query('INSERT INTO produits VALUES(à remplir);',[req.body.?, req.body.?],
 	function(error, results, fields){
 		if (error) {
