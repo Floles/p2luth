@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	a(href="/admin/create" class="btn btn-info") Création d'article 
+	br
+	br
+	table.table.table-striped.table-bordered
+		tr
+			th #
+			th titre
+			th texte
+			th action 
+		each produit in produits
+			tr
+				td= produit.
+				td= produit. 
+				td= produit.
+				td 
+					a(href="/admin/supprimer/article-" + post.id onclick="return confirm (Voulez-vous supprimer ce produits ?)") Supprimer l'article
