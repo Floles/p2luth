@@ -1,0 +1,6 @@
+module.exports = {
+	host     : 'localhost',
+	user     : config.user,
+	password : config.password,
+	database : 'luthier'
+};

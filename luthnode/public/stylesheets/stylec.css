@@ -3,12 +3,6 @@
 font-family: 'Dancing Script', cursive;
 font-family: 'Open Sans Condensed', sans-serif;
 
-*/
-
-body {
-  background-color: white;
-  overflow-x: hidden;
-}
 
 /*---navbar-------*/
 
@@ -54,7 +48,7 @@ h1{
   font-family: 'Dancing Script', cursive;
   color: black;
   font-size: 3em;
-  margin-top: 1px;
+  margin-top: 100px;
 }
 
 p {
