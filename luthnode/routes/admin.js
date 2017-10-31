@@ -1,14 +1,88 @@
-/*var express = require('express');
-var router = express.Router();
-const mysql = require('mysql');
 
-const connection = mysql.createConnection({
- 	host     : 'localhost',
-	user     : 'root',
-	password : 'root',
-	database : 'groupe2'
+const express = require('express');
+const router = express.Router();
+const mysql = require('mysql');
+const config = require('../config.js');
+
+const connection = mysql.createConnection(config);
+
+connection.connect();
+
+
+// GET /admin 
+router.get('/', function(req, res, next) {
+	// Liste des produits
+	connection.query('SELECT * FROM products;', function(error, results, fields){
+		if (error) {
+			console.log(error);
+		}else {
+			res.render('admin-index', {products:results});
+		};
+	});
+	
 });
 
+// GET /admin/create
+router.get('/create', function(req, res, next) {
+	// WYSIWYG
+	res.render('admin_create');
+});
+
+// POST /admin/create
+router.post('/create', function(req, res, next) {
+	// Création d'article
+	/*if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
+		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
+	} else {
+		res.send('Vous avez fait une erreur dans le téléchargement');
+	}*/
+	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?);',
+	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description],
+	function(error, results, fields){
+		if (error) {
+			console.log(error);
+		} else {
+			res.redirect('/admin');
+		};
+	});
+});
+
+// GET update
+router.get('/update/:id_products(\\d+)',function(req, res){
+	connection.query('SELECT * FROM products WHERE id = ?', [req.params.id_products], function(error, results){
+
+		res.render('admin-update', {
+			products: results[0]
+		});
+	});
+});
+
+
+router.post('/update/:id_products(\\d+)', function(req, res){
+	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id = ?', 
+		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.body.image, req.params.id_products], function(error){
+		if (error) {
+			console.log(error);
+		} else {
+			res.redirect('/admin');
+		}
+	});
+});
+
+// Delete
+router.get('/supprimer/:id_products(\\d+)',function(req, res){
+	connection.query('DELETE FROM products WHERE id = ?', [req.params.id_products], function(error){
+		if (error) {
+			console.log(error);
+		} else {
+			res.redirect('/admin');
+		}
+
+	});
+});
+
+
+// page de login
 
 router.get('/', function(req, res, next) {
 	// Page de connexion
@@ -25,8 +99,6 @@ router.get('/', function(req, res, next) {
 
   
 });
-
-
 
 router.post('/', function(req, res, next) {
 	// Ici on gère les informations de l'utilisateur
@@ -68,6 +140,7 @@ router.get('/adminToto', function(req, res, next) {
   	res.redirect("/");
   }
 });
+
 /* A compléter GET page admin error.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -77,5 +150,5 @@ router.get('/', function(req, res, next) {
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
-module.exports = router;*/
+*/
+module.exports = router;

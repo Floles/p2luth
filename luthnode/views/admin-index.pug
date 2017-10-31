@@ -7,15 +7,19 @@ block content
 	table.table.table-striped.table-bordered
 		tr
 			th #
-			th titre
-			th texte
-			th picture
-			th action 
-		each produit in produits
+			th Produit
+			th Référence
+			th Marque
+			th Bois utilisé
+			th Description
+			th Image 
+		each produit in products
 			tr
-				td= produit.
-				td= produit.
-				td= produit. 
-				td= produit.
+				td= produit.id_products
+				td= produit.product
+				td= produit.reference
+				td= produit.marque
+				td= produit.bois_utilise
+				td= produit.description
 				td 
-					a(href="/admin/supprimer/article-" + post.id onclick="return confirm (Voulez-vous supprimer ce produits ?)") Supprimer l'article
+					a(href="/admin/supprimer/article-" + produit.id_products onclick="return confirm (Voulez-vous supprimer ce produits ?)") Supprimer l'article

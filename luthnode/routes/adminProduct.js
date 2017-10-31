@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 const config = require('../config.js');
@@ -49,4 +49,4 @@ router.post('/create', upload.single('produit_image'), function(req, res, next) 
 
 
 
-module.exports = router;
+module.exports = router;*/
