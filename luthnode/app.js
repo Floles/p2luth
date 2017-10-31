@@ -12,11 +12,11 @@ var admin = require('./routes/admin');
 var app = express();
 
 // pour la page admin super protégée !
-app.use(session({
+/*app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true
-}));
+}));*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
