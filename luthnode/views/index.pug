@@ -1,5 +1,17 @@
 extends layout
-
+block cssindex
+  link(rel='stylesheet' href='/stylesheets/style.css', type='text/css')
 block content
-  h1= title
-  p Welcome to #{title}
+  section#accueil
+  .row
+    .col-xs-7.col-xs-offset-4
+        h1
+          | Au Bois - Luthier à Paris depuis 2015.
+          br
+          | Bonjour et bienvenue sur mon site internet
+  .row
+    .col-xs-5.col-xs-offset-5
+        p
+          | Située au coeur de la rue de Rome, la boutique "Au Bois - Luthier" 
+          br
+          | vous propose des prestations de qualité de création, d'entretien et de réparation de guitares et de violoncelles.

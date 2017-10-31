@@ -1,0 +1,29 @@
+
+block content
+    a(href="/admin" class="btn btn-info") <- Liste
+    br
+    br
+    form(method="POST")
+      .form-group
+        label(for='title') Produit
+        input#title.form-control(type='text' placeholder='Titre' name="produit")
+      .form-group
+        label(for='title') Référence
+        input#title.form-control(type='text' placeholder='Titre' name="reference")
+      .form-group
+        label(for='title') Marque
+        input#title.form-control(type='text' placeholder='Titre' name="marque")
+      .form-group
+        label(for='title') Bois utilisé
+        input#title.form-control(type='text' placeholder='Titre' name="bois_utilise")
+      .form-group
+        label(for='text') Description
+        textarea#text.form-control(placeholder='Texte de l\'article' name="description")
+      .form-group
+        label(for='picture') Image
+        input(type='file' name='image')
+      button.btn.btn-default(type='submit') Enregistrer
+
+      script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
+      script.
+          tinymce.init({ selector:'textarea' });
