@@ -36,7 +36,7 @@ router.post('/create', function(req, res, next) {
 	} else {
 		res.send('Vous avez fait une erreur dans le téléchargement');
 	}*/
-	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?);',
+	connection.query('INSERT INTO products(id_products, product, reference, marque, bois_utilise, description) VALUES(NULL, ?, ?, ?, ?, ?);',
 	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description],
 	function(error, results, fields){
 		if (error) {
