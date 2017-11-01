@@ -23,15 +23,17 @@ router.get('/contact', function(req, res, next) {
 });
 
 /* A valider GET page Produit. */
-router.get('/gabaritpdt/product-:id_products(\\d+)', function(req, res, next) {
-  connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id_products], function(error, results, fields){
+router.get('/gabaritpdt/product-:id([\\d+])', function(req, res, next) {
+  connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id], function(error, results, fields){
 		if (error) {
 			console.log(error);
-		}else {
-			res.render('gabaritpdt', {
-        products:results[0]
-      });
 		};
+		if (results.length == 0){
+			res.sendStatus(404);
+		}
+		res.render('gabaritpdt', {
+        	products:results[0]
+      	});
 	});
 	
 });

@@ -11,12 +11,12 @@ block content
 			.col-xs-offset-1.col-xs-5.text
 				img.img-responsive.center-block.resize(src='/images/8.jpg', alt='guitare')
 			.text
-			each produit, index in products
-				p.img_text= []+ produit.description
+				p.img_text=products.description
 					
 			.caracteristique
 				h4 Caractéristiques :
+
 				ul
-					li= produit.reference
-					li= produit.marque
-					li= produit.bois_utilise
+					li='>> Référence : ' + products.reference
+					li='>> Marque : ' + products.marque
+					li='>> Bois utilisée : ' + products.bois_utilise
