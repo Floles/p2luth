@@ -49,7 +49,7 @@ router.post('/create', function(req, res, next) {
 
 // GET update
 router.get('/update/:id_products(\\d+)',function(req, res){
-	connection.query('SELECT * FROM products WHERE id = ?', [req.params.id_products], function(error, results){
+	connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id_products], function(error, results){
 
 		res.render('admin-update', {
 			products: results[0]
@@ -59,7 +59,7 @@ router.get('/update/:id_products(\\d+)',function(req, res){
 
 
 router.post('/update/:id_products(\\d+)', function(req, res){
-	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id = ?', 
+	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id_products = ?;', 
 		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.body.image, req.params.id_products], function(error){
 		if (error) {
 			console.log(error);
@@ -70,8 +70,8 @@ router.post('/update/:id_products(\\d+)', function(req, res){
 });
 
 // Delete
-router.get('/supprimer/:id_products(\\d+)',function(req, res){
-	connection.query('DELETE FROM products WHERE id = ?', [req.params.id_products], function(error){
+router.get('/supprimer/article-:id_products(\\d+)',function(req, res){
+	connection.query('DELETE FROM products WHERE id_products = ?;', [req.params.id_products], function(error){
 		if (error) {
 			console.log(error);
 		} else {
@@ -87,7 +87,7 @@ router.get('/supprimer/:id_products(\\d+)',function(req, res){
 router.get('/', function(req, res, next) {
 	// Page de connexion
 
-	connection.query(`select * from users where name= ?`,[req.body.toto], function (error, results, fields) {
+	connection.query(`select * from users where name= ?;`,[req.body.toto], function (error, results, fields) {
 	 	 res.render('index', { 
 	 	 	title: 'Express',
 	 	 	error : JSON.stringify(error),
@@ -113,7 +113,7 @@ router.post('/', function(req, res, next) {
 	//` text ${var} fzoeijfzeoj ${var2}` 
 
 	connection.query(`select * from users where name= "${login}" 
-		and password="${password}"`, function (error, results, fields) {
+		and password="${password}";`, function (error, results, fields) {
  	 if (results.length==0) {
  	 	res.send("Erreur");
  	 }else{
