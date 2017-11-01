@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* A valider GET page Mes créations. */
-router.get('/gabarit1', function(req, res, next) {
+router.get('/mescreations', function(req, res, next) {
   res.render('gabarit1');
 });
 
@@ -23,7 +23,7 @@ router.get('/contact', function(req, res, next) {
 });
 
 /* A valider GET page Produit. */
-router.get('/gabaritpdt/product-:id([\\d+])', function(req, res, next) {
+router.get('/produit/product-:id([\\d+])', function(req, res, next) {
   connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id], function(error, results, fields){
 		if (error) {
 			console.log(error);
