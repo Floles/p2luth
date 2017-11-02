@@ -6,16 +6,16 @@ block content
     form(method="POST")
       .form-group
         label(for='title') Produit
-        input#title.form-control(type='text' placeholder='Titre' name="produit")
+        input#title.form-control(type='text' placeholder='Produit' name="product")
       .form-group
         label(for='title') Référence
-        input#title.form-control(type='text' placeholder='Titre' name="reference")
+        input#title.form-control(type='text' placeholder='Reference' name="reference")
       .form-group
         label(for='title') Marque
-        input#title.form-control(type='text' placeholder='Titre' name="marque")
+        input#title.form-control(type='text' placeholder='Marque' name="marque")
       .form-group
         label(for='title') Bois utilisé
-        input#title.form-control(type='text' placeholder='Titre' name="bois_utilise")
+        input#title.form-control(type='text' placeholder='Bois' name="bois_utilise")
       .form-group
         label(for='text') Description
         textarea#text.form-control(placeholder='Texte de l\'article' name="description")
@@ -24,6 +24,6 @@ block content
         input(type='file' name='image')
       button.btn.btn-default(type='submit') Enregistrer
 
-      script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
+      script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
       script.
           tinymce.init({ selector:'textarea' });

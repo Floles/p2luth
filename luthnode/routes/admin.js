@@ -8,6 +8,14 @@ const connection = mysql.createConnection(config);
 
 connection.connect();
 
+	// Page de connexion
+
+users = [{
+"name" : 'admin',
+"mdp" : '123' 
+
+}];
+
 
 // GET /admin 
 router.get('/', function(req, res, next) {
@@ -30,13 +38,8 @@ router.get('/create', function(req, res, next) {
 
 // POST /admin/create
 router.post('/create', function(req, res, next) {
-	// Création d'article
-	/*if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
-		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
-	} else {
-		res.send('Vous avez fait une erreur dans le téléchargement');
-	}*/
-	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?);',
+	
+	connection.query('INSERT INTO products(id_products, product, reference, marque, bois_utilise, description) VALUES(NULL, ?, ?, ?, ?, ?);',
 	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description],
 	function(error, results, fields){
 		if (error) {
@@ -49,7 +52,7 @@ router.post('/create', function(req, res, next) {
 
 // GET update
 router.get('/update/:id_products(\\d+)',function(req, res){
-	connection.query('SELECT * FROM products WHERE id = ?', [req.params.id_products], function(error, results){
+	connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id_products], function(error, results){
 
 		res.render('admin-update', {
 			products: results[0]
@@ -59,7 +62,7 @@ router.get('/update/:id_products(\\d+)',function(req, res){
 
 
 router.post('/update/:id_products(\\d+)', function(req, res){
-	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id = ?', 
+	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id_products = ?;', 
 		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.body.image, req.params.id_products], function(error){
 		if (error) {
 			console.log(error);
@@ -70,8 +73,8 @@ router.post('/update/:id_products(\\d+)', function(req, res){
 });
 
 // Delete
-router.get('/supprimer/:id_products(\\d+)',function(req, res){
-	connection.query('DELETE FROM products WHERE id = ?', [req.params.id_products], function(error){
+router.get('/supprimer/article-:id_products(\\d+)',function(req, res){
+	connection.query('DELETE FROM products WHERE id_products = ?;', [req.params.id_products], function(error){
 		if (error) {
 			console.log(error);
 		} else {
@@ -84,80 +87,27 @@ router.get('/supprimer/:id_products(\\d+)',function(req, res){
 
 // page de login
 
-router.get('/', function(req, res, next) {
-	// Page de connexion
 
-users = [{
-"name" : 'admin',
-"mdp" : '123' 
-
-}];
-
-
-router.post('/', function(req, res, next) {
 // Ici on gère les informations de l'utilisateur
 
-//res.send(req.body.username);
-//res.send(req.body['username']);
 
 // Tester si l'utilisateur existe en BDD -> Comparer le nom (login) / le password
-let login= req.body.username;
-let password = req.body.password ;
-// select name, password from users where name='${var}' and password='wild';
-//` text ${var} fzoeijfzeoj ${var2}` 
-
-/* connection.query(`select * from users where name= "${login}" 
-and password="${password}"`, function (error, results, fields) {
-if (results.length==0) {
-res.send("Erreur");
-}else{
-req.session.connect=true;
-res.redirect("/admin");
-
-}
-
-}); */
-
-if (login == users[0].name && password == users[0].mdp) {
-req.session.connect=true;
-res.redirect("/admin");
-}else{
-res.send("Erreur");
-
-}
 
 
 // Si faux on lui envoie un message pour l'informer 
 // Si vrai -> On ouvre la session & on le redirige sur /admin 
 
+	connection.query(`select * from users where name= ?;`,[req.body.toto], 
+		function (error, results, fields) {
+	 	 res.render('index', { 
+	 	 	title: 'Express',
+	 	 	error : JSON.stringify(error),
+	 	 	results: JSON.stringify(results), 
+	 	 	fields : JSON.stringify(fields)
+	 	 	 });
+ 	 
+	});
 
-});
-
-<<<<<<< HEAD
-
-
-// router.post('/', function(req, res, next) {
-// 	// Ici on gère les informations de l'utilisateur
-
-// 	//res.send(req.body.username);
-// 	//res.send(req.body['username']);
-
-// 	// Tester si l'utilisateur existe en BDD  -> Comparer le nom (login) / le password
-// 	let login= req.body.username;
-// 	let password = req.body.password ;
-// 	// select name, password from users where name='${var}' and password='wild';
-// 	//` text ${var} fzoeijfzeoj ${var2}` 
-
-// 	connection.query(`select * from users where name= "${login}" 
-// 		and password="${password}"`, function (error, results, fields) {
-//  	 if (results.length==0) {
-//  	 	res.send("Erreur");
-//  	 }else{
-//  	 	req.session.connect=true;
-//  	 	res.redirect("/admin");
-
-//  	 }
-=======
 router.post('/', function(req, res, next) {
 	// Ici on gère les informations de l'utilisateur
 
@@ -171,16 +121,14 @@ router.post('/', function(req, res, next) {
 	//` text ${var} fzoeijfzeoj ${var2}` 
 
 	connection.query(`select * from users where name= "${login}" 
-		and password="${password}"`, function (error, results, fields) {
+		and password="${password}";`, function (error, results, fields) {
  	 if (results.length==0) {
  	 	res.send("Erreur");
  	 }else{
  	 	req.session.connect=true;
  	 	res.redirect("/admin");
 
- 	 }
->>>>>>> a0369b1d24b3b477e6f60a62041a7745919eae57
- 	 
+ 	 } 	 
 // 	});
 // 	// Si faux on lui envoie un message pour l'informer 
 // 	// Si vrai -> On ouvre la session & on le redirige sur /admin 

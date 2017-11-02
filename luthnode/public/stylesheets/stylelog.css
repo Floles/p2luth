@@ -1,9 +1,10 @@
 
+body{ 
+background-color: black;
+ }
+
 .h1ad{
 	font-family: 'Dancing Script', cursive;
-}
-
-.mdplettre{
 }
 
 .valid{
