@@ -12,7 +12,8 @@ block content
 			th Marque
 			th Bois utilisé
 			th Description
-			th Image 
+			th Image
+			th Suppression 
 		each produit in products
 			tr
 				td= produit.id_products
@@ -21,5 +22,6 @@ block content
 				td= produit.marque
 				td= produit.bois_utilise
 				td= produit.description
+				td
 				td 
 					a(href="/admin/supprimer/article-" + produit.id_products onclick="return confirm('Voulez-vous supprimer ce produit ?');") Supprimer l'article
