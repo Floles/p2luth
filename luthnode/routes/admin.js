@@ -30,7 +30,7 @@ router.get('/create', function(req, res, next) {
 
 // POST /admin/create
 router.post('/create', function(req, res, next) {
-	// Création d'article
+	// Création d'article , {body: req.body})
 	/*if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
 		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
 	} else {
