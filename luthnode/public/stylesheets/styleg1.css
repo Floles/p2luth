@@ -203,14 +203,13 @@ body {
     footer {
         display: none;
     }
-    
-    body {
-        margin-right: 50px;
-        margin-left: 50px;
+    #centre {
+        margin-left: 35px;
+        margin-right: -35px;
     }
-    
-     .col-sm-3 {
+    .col-sm-3 {
         margin-top: 45px;
+        margin-left: 35px;
     }
     
     .window {
@@ -404,6 +403,14 @@ body {
     }
     .col-sm-3 {
         margin-top: 45px;
+    }
+    #centre {
+        margin-right: 5px;
+        margin-left: -1px;
+    }
+    .col-sm-3 {
+        margin-top: 45px;
+        margin-left: -15px;
     }
 }
 

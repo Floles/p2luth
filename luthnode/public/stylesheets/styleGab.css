@@ -13,7 +13,7 @@ body {
 
 /*---navbar-------*/
 
-.container-fluid {
+.container {
   padding-left: 0;
   padding-right: 0;
 }
@@ -54,9 +54,11 @@ body {
 
 h1 {
   font-family: 'Dancing Script', cursive;
-  color: white;
+  color: black;
   font-size: 3em;
   margin-top: 120px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 p {
@@ -66,16 +68,13 @@ p {
   text-align: center;
 }
 
-section div h2 {
-  font-family: 'Dancing Script', cursive;
-  margin-top: 110px;
-  margin-bottom: 50px;
-  font-size: 48px;
-  text-align: center;
-}
 .caracteristique {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 18px;
+}
+
+.caracteristique ul {
+  padding-left: 10px;
 }
 
 .caracteristique ul li {
@@ -87,8 +86,6 @@ section div h2 {
 }
 
 .resize {
-  max-width: 95%;
-  max-height: 95%;
   border-radius: 5px;
 }
 
@@ -189,27 +186,6 @@ footer div {
     display: none;
   }
   
-  .text {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .img_text {
-    width: 60%;
-    font-size: 16px;
-    margin: 0 auto;
-    padding-top: 15px;
-  }
-
-  .caracteristique {
-    margin-left: 150px;
-  }
-
-  .caracteristique ul {
-    padding-left: 0;
-  }
-
   .window {
     display: block;
     width: 100%;
@@ -396,19 +372,15 @@ footer div {
 }
 
 @media all and (min-width: 320px) and (max-width: 425px) {
-  .pdt {
-    margin-top: 80px;
-    font-size: 38px;
-  }
-  .caracteristique {
-    margin-left: 65px;
-    font-size: 14px;
+  .text {
+    margin-left: 10px;
   }
   .resize {
-    max-width: 160%;
-    max-height: 160%;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    max-width: 120%;
+    max-height: 120%;
     border-radius: 5px;
-    margin-left: -30px;
   }
 }
 
