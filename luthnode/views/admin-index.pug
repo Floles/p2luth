@@ -24,4 +24,5 @@ block content
 				td= produit.description
 				td
 				td 
-					a(href="/admin/supprimer/article-" + produit.id_products onclick="return confirm('Voulez-vous supprimer ce produit ?');") Supprimer l'article
+					a(href="/admin/supprimer/produit-" + produit.id_products onclick="return confirm('Voulez-vous supprimer ce produit ?');") Supprimer produit / 
+					a(href="/admin/update/produit" + produit.id_products) Modifier produit 
