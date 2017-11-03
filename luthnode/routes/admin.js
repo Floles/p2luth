@@ -58,7 +58,7 @@ router.get('/update/produit:id_products(\\d+)',function(req, res){
 });
 
 // image à remettre dans la connection query (req.body.image, image = ?)
-router.post('/update/produit:id_products(\\d+)', function(req, res){ console.log(req.body);
+router.post('/update/produit:id_products(\\d+)', function(req, res){
 	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ? WHERE id_products = ?;', 
 		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.params.id_products], function(error){
 		if (error) {
