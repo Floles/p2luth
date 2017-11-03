@@ -3,7 +3,9 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 const config = require('../config.js');
-
+const fs = require('fs');
+const multer  = require('multer');
+const upload = multer({ dest: 'tmp/' });
 const connection = mysql.createConnection(config);
 
 connection.connect();
@@ -29,13 +31,13 @@ router.get('/create', function(req, res, next) {
 });
 
 // POST /admin/create
-router.post('/create', function(req, res, next) {
+router.post('/create', upload.single('image'), function(req, res, next) {
 	// Création d'article
-	/*if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
+	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
 		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
 	} else {
 		res.send('Vous avez fait une erreur dans le téléchargement');
-	}*/
+	}
 	connection.query('INSERT INTO products(id_products, product, reference, marque, bois_utilise, description) VALUES(NULL, ?, ?, ?, ?, ?);',
 	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description],
 	function(error, results, fields){
