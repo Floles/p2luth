@@ -19,7 +19,7 @@ block content
         input#title.form-control(type='text' placeholder='Bois' name="bois_utilise" value=products.bois_utilise)
       .form-group
         label(for='description') Description
-        textarea#text.form-control(placeholder='Texte produit' name="text")=products.description
+        textarea#text.form-control(placeholder='Texte produit' name="description")=products.description
       button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier ce produit ?');") Modifier
 
       script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
