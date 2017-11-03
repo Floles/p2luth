@@ -51,7 +51,7 @@ router.post('/create', function(req, res, next) {
 });
 
 // GET update
-router.get('/update/:id_products(\\d+)',function(req, res){
+router.get('/update/produit:id_products(\\d+)',function(req, res){
 	connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id_products], function(error, results){
 
 		res.render('admin-update', {
@@ -60,10 +60,10 @@ router.get('/update/:id_products(\\d+)',function(req, res){
 	});
 });
 
-
-router.post('/update/:id_products(\\d+)', function(req, res){
-	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id_products = ?;', 
-		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.body.image, req.params.id_products], function(error){
+// image à remettre dans la connection query (req.body.image, image = ?)
+router.post('/update/produit:id_products(\\d+)', function(req, res){
+	connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ? WHERE id_products = ?;', 
+		[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.params.id_products], function(error){
 		if (error) {
 			console.log(error);
 		} else {
@@ -73,7 +73,7 @@ router.post('/update/:id_products(\\d+)', function(req, res){
 });
 
 // Delete
-router.get('/supprimer/article-:id_products(\\d+)',function(req, res){
+router.get('/supprimer/produit-:id_products(\\d+)',function(req, res){
 	connection.query('DELETE FROM products WHERE id_products = ?;', [req.params.id_products], function(error){
 		if (error) {
 			console.log(error);

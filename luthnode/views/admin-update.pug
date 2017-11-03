@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    a(href="/admin" class="btn btn-info") <- Liste
+    br
+    br
+    form(method="POST")
+      .form-group
+        label(for='Produit') Produit
+        input#title.form-control(type='text' placeholder='Produit' name="product" value=products.product)
+      .form-group
+        label(for='Référence') Référence
+        input#title.form-control(type='text' placeholder='Reference' name="reference" value=products.reference)
+      .form-group
+        label(for='Marque') Marque
+        input#title.form-control(type='text' placeholder='Marque' name="marque" value=products.marque)
+      .form-group
+        label(for='Bois_utilise') Bois utilisé
+        input#title.form-control(type='text' placeholder='Bois' name="bois_utilise" value=products.bois_utilise)
+      .form-group
+        label(for='description') Description
+        textarea#text.form-control(placeholder='Texte produit' name="text")=products.description
+      button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier ce produit ?');") Modifier
+
+      script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
+      script.
+          tinymce.init({ selector:'textarea' });
