@@ -228,7 +228,7 @@ footer div {
     background: #0000;
   }
   .window .header {
-    position: fixed;
+    position: absolute;
     display: block;
     top: 0;
     left: 0;
@@ -240,7 +240,7 @@ footer div {
     transition: all 0.5s ease-out, background 1s ease-out;
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
-    z-index: 3;
+    z-index: 1;
   }
   .window .header .burger-container {
     position: relative;
@@ -294,7 +294,7 @@ footer div {
   }
   .window .header ul.menu li.menu-item {
     border-bottom: 1px solid #333;
-    margin-top: 5px;
+    margin-top: 25px;
     -webkit-transform: scale(1.15) translateY(-30px);
     transform: scale(1.15) translateY(-30px);
     opacity: 0;

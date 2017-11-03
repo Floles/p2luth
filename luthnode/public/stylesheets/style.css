@@ -178,10 +178,6 @@ footer div {
     display: none;
   }
   
-  nav {
-    display: none;
-  }
-
   .window {
     display: block;
     width: 100%;
@@ -256,7 +252,7 @@ footer div {
   }
   .window .header ul.menu li.menu-item {
     border-bottom: 1px solid #333;
-    margin-top: 5px;
+    margin-top: 25px;
     -webkit-transform: scale(1.15) translateY(-30px);
     transform: scale(1.15) translateY(-30px);
     opacity: 0;
@@ -368,24 +364,23 @@ footer div {
 }
 
 @media all and (max-width: 480px) { 
-#accueil {
-float: none; 
-width: auto; 
-font-size: 13px;  
-background-color: black;
- }
+  #accueil {
+  float: none; 
+  width: auto; 
+  font-size: 13px;  
+  background-color: black;
+  }
 }
 
 @media all and (min-width: 481px) and (max-width: 780px) {
-#accueil {
-  float: none; 
-  width: auto; 
-  font-size: 13px; 
-  background-color: black; }
+  #accueil {
+    float: none; 
+    width: auto; 
+    font-size: 13px; 
+    background-color: black; }
 }
 
-@media all and (min-width: 781px) and (max-width: 1137px)
-{
+@media all and (min-width: 781px) and (max-width: 1137px){
   #accueil {
   float: none; 
   width: auto; 
@@ -393,7 +388,7 @@ background-color: black;
   background-color: black; }
  }
  
- @media all and (min-width: 1138px){
+@media all and (min-width: 1138px){
  #accueil {
   float: none; 
   width: auto; 

@@ -218,7 +218,7 @@ footer div {
     background: #0000;
   }
   .window .header {
-    position: fixed;
+    position: absolute;
     display: block;
     top: 0;
     left: 0;
@@ -284,7 +284,7 @@ footer div {
   }
   .window .header ul.menu li.menu-item {
     border-bottom: 1px solid #333;
-    margin-top: 5px;
+    margin-top: 25px;
     -webkit-transform: scale(1.15) translateY(-30px);
     transform: scale(1.15) translateY(-30px);
     opacity: 0;
@@ -334,7 +334,7 @@ footer div {
     width: 100%;
   }
   .window .header.menu-opened {
-    height: 60%;
+    height: 70%;
     background-color: #000;
     -webkit-transition: all 0.3s ease-in, background 0.5s ease-in;
     transition: all 0.3s ease-in, background 0.5s ease-in;
