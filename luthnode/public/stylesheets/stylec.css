@@ -177,7 +177,10 @@ footer div {
 }
 
 @media screen and (max-width: 768px) {
-  
+  .input-group .form-control{
+    z-index: 0;
+  }
+
   .flexo{
     display: flex;
     flex-direction: column;
@@ -216,10 +219,15 @@ footer div {
   nav {
     display: none;
   }
-  
-  #title {
-    margin-top: 50px;
+
+  footer {
+    display: none;
   }
+  
+  #titlec {
+    margin-top: 20px;
+  }
+
   .window {
     display: block;
     width: 100%;
