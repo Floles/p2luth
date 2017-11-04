@@ -1,0 +1,32 @@
+footer {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    height: 82px;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+    position: fixed;
+}
+
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    color: #dfc198;
+    text-decoration: none;
+}
+
+#ab {
+    padding-left: 25px;
+    font-size: 2.2em;
+}
+
+.padding {
+    padding-top: 23px;
+}
+
+#fb:hover {
+    filter: grayscale(0.8);
+}
