@@ -10,9 +10,9 @@ block content
 					h1.pdt Mes produits
 			.row.text
 				.col-sm-6.col-xs-8.text
-					img.img-responsive.center-block.resize(src='/images/8.jpg', alt='guitare')
+					img.img-responsive.center-block.resize(src='/images/'+ products.image, alt='guitare')
 				.col-sm-6.col-xs-12.text
-					p.img_text=products.description
+					p.img_text!=products.description
 						
 					.caracteristique
 						h4 Caractéristiques :
