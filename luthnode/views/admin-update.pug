@@ -33,11 +33,11 @@ html(lang='fr')
         input#title.form-control(type='text' placeholder='Bois' name="bois_utilise" value=products.bois_utilise)
       .form-group
         label(for='description') Description
-        textarea#text.form-control(placeholder='Texte produit' name="text")=products.description
+        textarea#text.form-control(placeholder='Texte produit' name="description")=products.description
       .form-group
         label(for='exampleInputFile') File input
         input#exampleInputFile(type='file' name="image")
-      button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier ce produit ?');") Modifier
+      button.btn.btn-default(type='submit') Modifier
 
     script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
     script.
