@@ -1,0 +1,25 @@
+extends layout
+block cssindex
+	link(rel='stylesheet' href='/stylesheets/styleg1.css', type='text/css')
+
+block content
+
+		section
+			#container
+				.row
+					.col-sm-4.col-sm-offset-4
+						h1 Mon métier de luthier
+				.row
+					.col-sm-3.col-sm-offset-1
+						img.center-block(src='images/AuboisLuthierPhotodeluth1.jpg', alt='Le métier de luthier, tableau')
+						br
+					.col-sm-4#centre
+						p.central
+							| Un luthier est un artisan qui fabrique, répare et restaure les instruments de musique à cordes pincées ou frottées tels que les violons, altos, violoncelles, violes d'amour, guitares, guitares électriques.
+						hr
+						p
+							| Le terme dérive du mot "luth" qui désigne un instrument de musique à cordes pincées d'origine orientale.
+					.col-sm-3
+						img.center-block(src='images/AuboisLuthierPhotodeluth2.png', alt='Le métier de luthier, gravure')
+						br
+						
