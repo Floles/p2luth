@@ -17,9 +17,9 @@ router.get('/mescreations', function (req, res, next) {
     res.render('gabarit1');
 });
 
-/* GET page Mes produits */
-router.get('/mesproduits', function (req, res, next) {
-    res.render('gabaritpdt');
+/* GET page Mon métier */
+router.get('/monmetier', function (req, res, next) {
+    res.render('gabaritmetier');
 });
 
 /* GET page Produit, détails d'un produit */
