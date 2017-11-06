@@ -18,7 +18,7 @@ html(lang='fr')
     a(href="/admin" class="btn btn-info") <- Liste
     br
     br
-    form(method="POST")
+    form(method="POST" enctype="multipart/form-data")
       .form-group
         label(for='Produit') Produit
         input#title.form-control(type='text' placeholder='Produit' name="product" value=products.product)
@@ -34,8 +34,11 @@ html(lang='fr')
       .form-group
         label(for='description') Description
         textarea#text.form-control(placeholder='Texte produit' name="text")=products.description
+      .form-group
+        label(for='exampleInputFile') File input
+        input#exampleInputFile(type='file' name="image")
       button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier ce produit ?');") Modifier
 
-      script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
-      script.
-          tinymce.init({ selector:'textarea' });
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
+    script.
+        tinymce.init({ selector:'textarea' });

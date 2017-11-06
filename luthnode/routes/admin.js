@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 		if (error) {
 			console.log(error);
 		}else {
+			console.log(results)
 			res.render('admin-index', {products:results});
 		};
 	});
@@ -33,13 +34,13 @@ router.get('/create', function(req, res, next) {
 // POST /admin/create
 router.post('/create', upload.single('image'), function(req, res, next) {
 	// Création d'article
-	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
+	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
 		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
 	} else {
 		res.send('Vous avez fait une erreur dans le téléchargement');
 	}
-	connection.query('INSERT INTO products(id_products, product, reference, marque, bois_utilise, description) VALUES(NULL, ?, ?, ?, ?, ?);',
-	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description],
+	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?, ?, NULL);',
+	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname],
 	function(error, results, fields){
 		if (error) {
 			console.log(error);
