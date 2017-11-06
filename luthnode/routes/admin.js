@@ -34,6 +34,7 @@ router.get('/create', function(req, res, next) {
 router.post('/create', upload.single('image'), function(req, res, next) {
 	// Création d'article
 	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
+
 		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
 	} else {
 		res.send('Vous avez fait une erreur dans le téléchargement');
