@@ -37,6 +37,7 @@ html(lang='fr')
                 td= produit.bois_utilise
                 td= produit.description
                 td
+                    img(height=50 src='/images/'+ produit.image)
                 td 
                     a(href="/admin/supprimer/produit-" + produit.id_products onclick="return confirm('Voulez-vous supprimer ce produit ?');") Supprimer produit / 
                     a(href="/admin/update/produit" + produit.id_products) Modifier produit 

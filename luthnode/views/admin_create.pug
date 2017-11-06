@@ -35,11 +35,12 @@ html(lang='fr')
         label(for='text') Description
         textarea#text.form-control(placeholder='Texte de l\'article' name="description")
       .form-group
-        label(for='picture') Image
-        input(type='file' name='image')
+        label(for='exampleInputFile') File input
+        input#exampleInputFile(type='file' name="image")
+      
       button.btn.btn-default(type='submit') Enregistrer
 
-      script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
-      script.
-          tinymce.init({ selector:'textarea' });
+  script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
+    script.
+        tinymce.init({ selector:'textarea' });
 
