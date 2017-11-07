@@ -10,15 +10,42 @@ connection.connect();
 
 	// Page de connexion
 
-users = [{
+/*users = [{
 "name" : 'admin',
 "mdp" : '123' 
 
-}];
+}];/*
+// page de login
 
+
+// Ici on gère les informations de l'utilisateur
+
+
+// Tester si l'utilisateur existe en BDD -> Comparer le nom (login) / le password
+
+
+// Si faux on lui envoie un message pour l'informer 
+// Si vrai -> On ouvre la session & on le redirige sur /admin 
+
+/*	connection.query(`select * from users where name= ?;`,[req.body.name], 
+		function (error, results, fields) {
+	 	 res.render('index', { 
+	 	 	title: 'Express',
+	 	 	error : JSON.stringify(error),
+	 	 	results: JSON.stringify(results), 
+	 	 	fields : JSON.stringify(fields)
+	 	 	 });
+ 	 
+	});*/
+//deconection
+	router.get("/logout", function(req, res, next) {
+req.session.connect = false;
+res.redirect("admin");
+
+});
 
 // GET /admin 
-router.get('/', function(req, res, next) {
+router.get('/admin-index', function(req, res, next) {
 	// Liste des produits
 	connection.query('SELECT * FROM products;', function(error, results, fields){
 		if (error) {
@@ -45,11 +72,10 @@ router.post('/create', function(req, res, next) {
 		if (error) {
 			console.log(error);
 		} else {
-			res.redirect('/admin');
+			res.redirect('/admin-index');
 		};
 	});
 });
-
 // GET update
 router.get('/update/produit:id_products(\\d+)',function(req, res){
 	connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id_products], function(error, results){
@@ -85,77 +111,10 @@ router.get('/supprimer/produit-:id_products(\\d+)',function(req, res){
 });
 
 
-// page de login
+/*router.get('/disconnect', function(req, res, next) {
+  res.render('disconnect', { title: 'Express' });
+});*/
 
 
-// Ici on gère les informations de l'utilisateur
 
-
-// Tester si l'utilisateur existe en BDD -> Comparer le nom (login) / le password
-
-
-// Si faux on lui envoie un message pour l'informer 
-// Si vrai -> On ouvre la session & on le redirige sur /admin 
-
-	connection.query(`select * from users where name= ?;`,[req.body.toto], 
-		function (error, results, fields) {
-	 	 res.render('index', { 
-	 	 	title: 'Express',
-	 	 	error : JSON.stringify(error),
-	 	 	results: JSON.stringify(results), 
-	 	 	fields : JSON.stringify(fields)
-	 	 	 });
- 	 
-	});
-
-router.post('/', function(req, res, next) {
-	// Ici on gère les informations de l'utilisateur
-
-	//res.send(req.body.username);
-	//res.send(req.body['username']);
-
-	// Tester si l'utilisateur existe en BDD  -> Comparer le nom (login) / le password
-	let login= req.body.username;
-	let password = req.body.password ;
-	// select name, password from users where name='${var}' and password='wild';
-	//` text ${var} fzoeijfzeoj ${var2}` 
-
-	connection.query(`select * from users where name= "${login}" 
-		and password="${password}";`, function (error, results, fields) {
- 	 if (results.length==0) {
- 	 	res.send("Erreur");
- 	 }else{
- 	 	req.session.connect=true;
- 	 	res.redirect("/admin");
-
- 	 } 	 
-// 	});
-// 	// Si faux on lui envoie un message pour l'informer 
-// 	// Si vrai -> On ouvre la session & on le redirige sur /admin 
-
-  	 
-// });
-
-router.get('/adminToto', function(req, res, next) {
-	// Hello session !
-	// res.send(req.session.connect);
-	// Si la personne est connectée on affiche la page 
-	// Si la personne n'est pas connectée on le redirige sur la page de connexion
-  if(req.session.connect) {
-  	res.render('admin');
-  } else {
-  	res.redirect("/");
-  }
-});
-
-/* A compléter GET page admin error.
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-/* A compléter GET page admin disconnected.
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-*/
 module.exports = router;
