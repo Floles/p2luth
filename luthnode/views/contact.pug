@@ -13,21 +13,23 @@ block content
 			section#Inputs
 				.row
 					.col-xs-5.col-xs-offset-1.form
-						.input-group
-							span.input-group-addon.butmail Votre email
-							|             
-							input.form-control(type='text', placeholder='@exemple.com', aria-describedby='basic-addon2')
-						|           
-						.form-group
-							p.contact Ecrivez votre message ici:
-							|             
-							textarea#comment.form-control(rows='3')
-						|           
-						div
-							form.exp
-								.g-recaptcha.cap(data-sitekey='6LeBnDcUAAAAAMNhlFSmSL428ltmNf_1M2ofsPhl')
-							|             
-							input.valc(type='submit', value='valider', method='post', action='')
+						form(role='form', method='post')
+							.input-group
+								span.input-group-addon.butmail Votre email
+								|             
+								input.form-control(type='email', placeholder='toto@yopmail.com', aria-describedby='basic-addon2', name='email')
+							|           
+							.form-group
+								p.contact Ecrivez votre message ici:
+								|             
+								textarea#comment.form-control(rows='5', name='message')
+							|           
+							div
+								form.exp
+									.g-recaptcha.cap(data-sitekey='6LeBnDcUAAAAAMNhlFSmSL428ltmNf_1M2ofsPhl')
+								|
+								.form-group
+									button.btn.btn-primary(type='submit') Envoyer
 					|       
 					.col-xs-4.col-xs-offset-1.row
 						.text-center.flexo
