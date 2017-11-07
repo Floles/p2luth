@@ -1,6 +1,6 @@
 // navbar white
 nav#shadow.navbar.navbar-expand-md.navbar-fixed-top
-  .container-fluid
+   .container-fluid
     a.navbar-brand(href='/')
       img.img-responsive(src='https://i.imgur.com/N2dSmym.png', alt='Logo noir')
     #navbarsExampleDefault.collapse.navbar-collapse
@@ -10,25 +10,29 @@ nav#shadow.navbar.navbar-expand-md.navbar-fixed-top
             | Accueil 
             span.sr-only (current)
         li.nav-item(role='navigation')
-          a.nav-link(href='mescreations') Mes Créations
+          a.nav-link(href='/mescreations') Mes Créations
         li.nav-item(role='navigation')
-          a.nav-link(href='mescreations') Mon Métier
+          a.nav-link(href='/monmetier') Mon Métier
         li.nav-item(role='navigation')
-          a.nav-link(href='contact') Me contacter
+          a.nav-link(href='/contact') Me contacter
 // menu burger apple
 .window
-  .header
-    .burger-container
-      #burger
-        .bar.topBar
-        .bar.btmBar
-    ul.menu
-      li.menu-item
-        a(href='/') Accueil
-      li.menu-item
-        a(href='mescreations') Mes Créations
-      li.menu-item
-        a(href='mescreations') Mon Métier
-      li.menu-item
-        a(href='contact') Me Contacter
+    .header
+        .burger-container
+            #burger
+                .bar.topBar
+                .bar.btmBar
+     
+        .icon.icon-apple
+        ul.menu
+          li.menu-item
+            a(href='/') Accueil
+          li.menu-item
+            a(href='/mescreations') Mes Créations
+          li.menu-item
+            a(href='/mescreations') Mon Métier
+          li.menu-item
+            a(href='/contact') Me Contacter
+          li.menu-item
+            a(href='/mentions-legales') Mentions légales
 // fin menu burger apple

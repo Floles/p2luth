@@ -1,4 +1,5 @@
 extends layout
+include mixin
 block cssindex
 	link(rel='stylesheet' href='/stylesheets/stylec.css', type='text/css')
 block content
@@ -18,22 +19,23 @@ block content
 							input.form-control(type='text', placeholder='@exemple.com', aria-describedby='basic-addon2')
 						|           
 						.form-group
-							p Ecrivez votre message ici:
+							p.contact Ecrivez votre message ici:
 							|             
 							textarea#comment.form-control(rows='3')
 						|           
 						div
 							form.exp
-								.g-recaptcha.cap(data-sitekey='6LeuNQITAAAAAPGRU7dkrCPIrrR64WPvzMc7pn6Z')
+								.g-recaptcha.cap(data-sitekey='6LeBnDcUAAAAAMNhlFSmSL428ltmNf_1M2ofsPhl')
 							|             
 							input.valc(type='submit', value='valider', method='post', action='')
 					|       
 					.col-xs-4.col-xs-offset-1.row
 						.text-center.flexo
 							h2 Infos pratiques
-							|           
-							p
-								| &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;
+							p.contact           
+								+adresse(class="contact")
+								+transport(class="contact")
+								+horaire(class="contact")
 				|       
 				#map.row
 					.col-xs-12.text-center

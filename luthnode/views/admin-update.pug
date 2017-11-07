@@ -1,10 +1,24 @@
-extends layout
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width', ,='', initial-scale='1.0')
+    meta(name='description', content="Vous êtes sur la page d'accueil du site de la boutique Au bois, luthier à Paris depuis 2015, spécialisé en guitares et violoncelles.")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    block cssindex
+    link(rel='stylesheet', href='/javascripts/js.js')
+    link(rel='icon', type='image/png', href='/images/favicon.png')
+    link(rel='shortcut icon', type='images/x-icon', href='favicon.ico')
+    link(href='https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Open+Sans+Condensed:300,700&subset=latin-ext', rel='stylesheet')
+    block cssml
+    title Au bois - Luthier
 
-block content
+  body
     a(href="/admin" class="btn btn-info") <- Liste
     br
     br
-    form(method="POST")
+    form(method="POST" enctype="multipart/form-data")
       .form-group
         label(for='Produit') Produit
         input#title.form-control(type='text' placeholder='Produit' name="product" value=products.product)
@@ -19,9 +33,13 @@ block content
         input#title.form-control(type='text' placeholder='Bois' name="bois_utilise" value=products.bois_utilise)
       .form-group
         label(for='description') Description
-        textarea#text.form-control(placeholder='Texte produit' name="text")=products.description
-      button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier ce produit ?');") Modifier
+        textarea#text.form-control(placeholder='Texte produit' name="description")=products.description
+      .form-group
+        label(for='exampleInputFile') File input
+        input#exampleInputFile(type='file' name="image")
+      button.btn.btn-default(type='submit') Modifier
 
-      script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
-      script.
-          tinymce.init({ selector:'textarea' });
+
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=nvqmgo0i6oqkgn87olmzm529ujlraoqtzi5typcljepfnesh')
+    script.
+        tinymce.init({ selector:'textarea' });
