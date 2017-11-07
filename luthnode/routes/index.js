@@ -15,29 +15,40 @@ router.get('/', function (req, res, next) {
 
 /* GET page Mes créations */
 router.get('/mescreations', function (req, res, next) {
-    res.render('gabarit1');
-});
+    connection.query('SELECT * FROM products ORDER BY fk_id_categories desc,  id_products desc;', function (error, results, fields) {
+        res.render('gabarit1', {
 
-/* GET page Mon métier */
-router.get('/monmetier', function (req, res, next) {
-    res.render('gabaritmetier');
-});
-
-/* GET page Produit, détails d'un produit */
-router.get('/produit/product-:id([\\d+])', function (req, res, next) {
-    connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id], function (error, results, fields) {
-        if (error) {
-            console.log(error);
-        };
-        if (results.length == 0) {
-            res.sendStatus(404);
-        }
-        res.render('gabaritpdt', {
-            products: results[0]
+            guitar: results.filter(function(b){
+                return b.fk_id_categories == 1;
+            }),    
+            violoncelle: results.filter(function(b){
+                return b.fk_id_categories == 2;
+            })
         });
     });
 });
 
+/* GET page Mon métier */
+router.get('/monmetier', function (req, res, next) {
+
+    res.render('gabaritmetier');
+});
+
+/* GET page Produit, détails d'un produit */
+router.get('/product-:id(\\d+)', function (req, res, next) {
+    connection.query('SELECT * FROM products WHERE id_products = ? ;',[req.params.id], function (error, results, fields) {
+        res.render('gabaritpdt', {
+            products: results
+        });
+    });
+});
+/* GET page Me contacter */
+router.get('/contact', function (req, res, next) {
+    res.render('contact');
+});
+
+
+router.post('/valider', function(req, res, next) {
 var transport = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
   port: 2525,
@@ -46,14 +57,12 @@ var transport = nodemailer.createTransport({
     pass: "9e45dfb842f491"
   }
 });
-
-router.post('/contact', function(req, res, next) {
     transport.sendMail({
-        from: req.destination, // Expediteur
+        from: req.body.destination, // Expediteur
         to: "supergrandma@yopmail.com", // Destinataires
         subject: "Luthier site", // Sujet
-        text: req.message, // plaintext body
-        html: '<b>' + req.message + '</b>' // html body
+        text: req.body.message, // plaintext body
+        html: '<b>' + req.body.message + '</b>' // html body
     }, (error, response) => {
         if(error){
             console.log(error);
@@ -62,10 +71,6 @@ router.post('/contact', function(req, res, next) {
         }
     });
 
-});
-/* GET page Me contacter */
-router.get('/contact', function (req, res, next) {
-    res.render('contact');
 });
 
 /* GET page Mentions légales */

@@ -14,22 +14,24 @@ block content
 						p.crea Guitares
 						img.center-block(src='images/AuboisLuthierPhotodeguitare.jpg', alt='Boutique Au Bois Luthier à Paris, photographie de guitare')
 						br
-						p
-							a.modeles(href="produit/product-:id([\\d+]") >> Modèle 1
-						p
-							a.modeles(href='produit/product-4') >> Modèle 2
+
+						p.creation
+							a.modeles(href='/product-'+ guitar[0].id_products) >> Modèle 1
+						p.creation
+							a.modeles(href='/product-'+ guitar[1].id_products) >> Modèle 2
 					.col-sm-4#centre
 						p.central
 							| Je vous propose plusieurs modèles de guitares et de violoncelles dont vous trouverez les caractéristiques en cliquant sur les liens ci-contre.
 						hr
-						p
+						p.creation
 							| Je suis aussi en mesure de réaliser des commandes sur mesure. 
 							a.liencentral(href='contact') Je vous invite à me contacter directement ici pour en savoir plus.
 					.col-sm-3
 						p.crea Violoncelles
 						img.center-block(src='images/AuboisLuthierPhotodevioloncelle.jpg', alt='Boutique Au Bois Luthier à Paris, photographie de guitard')
 						br
-						p
-							a.modeles(href='produit/product-3') >> Modèle 1
-						p
-							a.modeles(href='produit/product-5') >> Modèle 2
+						
+						p.creation
+							a.modeles(href='/product-'+ violoncelle[0].id_products) >> Modèle 1
+						p.creation
+							a.modeles(href='/product-'+ violoncelle[1].id_products) >> Modèle 2

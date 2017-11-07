@@ -39,8 +39,8 @@ router.post('/create', upload.single('image'), function(req, res, next) {
 	} else {
 		res.send('Vous avez fait une erreur dans le téléchargement');
 	}
-	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?, ?, NULL);',
-	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname],
+	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?, ?, ?);',
+	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname,req.body.button],
 	function(error, results, fields){
 		if (error) {
 			console.log(error);
