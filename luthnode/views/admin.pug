@@ -1,0 +1,15 @@
+extend layout
+block content
+		.container-login
+			.row
+				.text-center.luth
+					img.logo_admin(src='/images/logo_black.png', alt='logo_aubois')
+					h1#h1ad  Espace administrateur
+					form(method='POST', action='/admin')
+						input(type='text', placeholder='login', name='login')
+						br
+						br
+						input(type='text', placeholder='passeword', name='password')
+						br
+						br
+						button.valid(type='submit' name='valid') Valider

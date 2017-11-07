@@ -1,30 +1,6 @@
 
-body{ 
-background-color: black;
- }
 
-.h1ad{
-	font-family: 'Dancing Script', cursive;
-}
-
-.valid{
-margin-top: 20px;
-}
-
-/*.h1adm {
-} 
-
-.inputid {
-
-}
-
-.logo_admin {
-
-}
-
-.h1ad {
-}
-
-.mdp{
-
+.valid {
+display: block;
+margin : auto;
 }

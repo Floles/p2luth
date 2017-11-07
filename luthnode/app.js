@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,12 +13,11 @@ var admin = require('./routes/admin');
 var app = express();
 
 // pour la page admin super protégée !
-/*app.use(session({
+app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true
-<<<<<<< HEAD
-}));*/
+}))
 // view engine setup
 
 
