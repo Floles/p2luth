@@ -15,29 +15,33 @@ router.get('/', function (req, res, next) {
 
 /* GET page Mes créations */
 router.get('/mescreations', function (req, res, next) {
-    res.render('gabarit1');
-});
+    connection.query('SELECT * FROM products ORDER BY fk_id_categories desc,  id_products desc;', function (error, results, fields) {
+        res.render('gabarit1', {
 
-/* GET page Mon métier */
-router.get('/monmetier', function (req, res, next) {
-    res.render('gabaritmetier');
-});
-
-/* GET page Produit, détails d'un produit */
-router.get('/produit/product-:id([\\d+])', function (req, res, next) {
-    connection.query('SELECT * FROM products WHERE id_products = ?;', [req.params.id], function (error, results, fields) {
-        if (error) {
-            console.log(error);
-        };
-        if (results.length == 0) {
-            res.sendStatus(404);
-        }
-        res.render('gabaritpdt', {
-            products: results[0]
+            guitar: results.filter(function(b){
+                return b.fk_id_categories == 1;
+            }),    
+            violoncelle: results.filter(function(b){
+                return b.fk_id_categories == 2;
+            })
         });
     });
 });
 
+/* GET page Mon métier */
+router.get('/monmetier', function (req, res, next) {
+
+    res.render('gabaritmetier');
+});
+
+/* GET page Produit, détails d'un produit */
+router.get('/product-:id(\\d+)', function (req, res, next) {
+    connection.query('SELECT * FROM products WHERE id_products = ? ;',[req.params.id], function (error, results, fields) {
+        res.render('gabaritpdt', {
+            products: results
+        });
+    });
+});
 /* GET page Me contacter */
 router.get('/contact', function (req, res, next) {
     res.render('contact');
