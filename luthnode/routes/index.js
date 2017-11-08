@@ -44,8 +44,25 @@ router.get('/product-:id(\\d+)', function (req, res, next) {
 });
 /* GET page Me contacter */
 router.get('/contact', function (req, res, next) {
-    res.render('contact');
+    connection.query('SELECT content FROM commercial_details WHERE id_cd = 1 OR id_cd = 6 OR id_cd = 7;', function (error, results, fields) {
+        
+        res.render('contact', {
+            detail: results[1]
+        });
+    });
 });
+
+/* GET page Footer */
+router.get('/', function (req, res, next) {
+    connection.query('SELECT content FROM commercial_details WHERE id_cd = 8;', function (error, results, fields) {
+        
+        res.render('footer', {
+            footer: results[0]
+        });
+    });
+});
+
+
 
 router.post('/contact', function (req, res, next) {
     var transport = nodemailer.createTransport({

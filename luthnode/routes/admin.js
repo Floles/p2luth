@@ -102,12 +102,13 @@ router.get('/detail:id_cd(\\d+)', function (req, res) {
     });
 });
 
-router.post('/detail:id_cd(\\d+)', function (req, res) {
+router.post('/detail:id_cd(\\d+)', function (req, res, next) {
     connection.query('UPDATE commercial_details SET name = ?, content = ? WHERE id_cd = ?;', [req.body.name, req.body.content, req.params.id_cd], function (error) {
+        console.log(req.body);
         if (error) {
             console.log(error);
         } else {
-            res.redirect('/admin-details');
+            res.redirect('/admin/details');
         }
     });
 });
