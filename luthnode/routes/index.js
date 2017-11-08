@@ -18,10 +18,10 @@ router.get('/mescreations', function (req, res, next) {
     connection.query('SELECT * FROM products ORDER BY fk_id_categories desc,  id_products desc;', function (error, results, fields) {
         res.render('gabarit1', {
 
-            guitar: results.filter(function(b){
+            guitar: results.filter(function (b) {
                 return b.fk_id_categories == 1;
-            }),    
-            violoncelle: results.filter(function(b){
+            }),
+            violoncelle: results.filter(function (b) {
                 return b.fk_id_categories == 2;
             })
         });
@@ -30,13 +30,16 @@ router.get('/mescreations', function (req, res, next) {
 
 /* GET page Mon métier */
 router.get('/monmetier', function (req, res, next) {
-
-    res.render('gabaritmetier');
+    connection.query('SELECT content FROM commercial_details WHERE id_cd = 5 OR id_cd = 3;', function (error, results, fields) {
+        res.render('gabaritmetier', {
+            details: results
+        });
+    });
 });
 
 /* GET page Produit, détails d'un produit */
 router.get('/product-:id(\\d+)', function (req, res, next) {
-    connection.query('SELECT * FROM products WHERE id_products = ? ;',[req.params.id], function (error, results, fields) {
+    connection.query('SELECT * FROM products WHERE id_products = ? ;', [req.params.id], function (error, results, fields) {
         res.render('gabaritpdt', {
             products: results
         });
@@ -45,32 +48,20 @@ router.get('/product-:id(\\d+)', function (req, res, next) {
 /* GET page Me contacter */
 router.get('/contact', function (req, res, next) {
     connection.query('SELECT content FROM commercial_details WHERE id_cd = 1 OR id_cd = 6 OR id_cd = 7;', function (error, results, fields) {
-        
+
         res.render('contact', {
-            detail: results[1]
+            details: results
         });
     });
 });
-
-/* GET page Footer */
-router.get('/', function (req, res, next) {
-    connection.query('SELECT content FROM commercial_details WHERE id_cd = 8;', function (error, results, fields) {
-        
-        res.render('footer', {
-            footer: results[0]
-        });
-    });
-});
-
-
 
 router.post('/contact', function (req, res, next) {
     var transport = nodemailer.createTransport({
-        host : "smtp.mailtrap.io",
-        port : 2525,
-        auth : {
-          user: "dfd01726c10a1e",
-          pass: "468515e201bd79"
+        host: "smtp.mailtrap.io",
+        port: 2525,
+        auth: {
+            user: "dfd01726c10a1e",
+            pass: "468515e201bd79"
         }
     });
     var mailOptions = {
@@ -81,12 +72,12 @@ router.post('/contact', function (req, res, next) {
         html: "<p>" + req.body.message + "</p>" // html body
     };
     console.log(req.body);
-    transport.sendMail(mailOptions, function (error, response){
-        if(error){
+    transport.sendMail(mailOptions, function (error, response) {
+        if (error) {
             return console.log(error);
         }
         console.log("Message sent : " + response.message);
-      });
+    });
     transport.close();
     res.redirect('/contact');
 });
