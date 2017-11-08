@@ -1,0 +1,24 @@
+extends layout
+block cssindex
+	link(rel='stylesheet' href='/stylesheets/styleGab.css', type='text/css')
+
+block content
+	each page in products	
+		section
+			.container
+				.row
+					.col-sm-12.col-xs-12
+						h1.pdt Mes produits
+				.row.text
+					.col-sm-6.col-xs-8.text
+						img.img-responsive.center-block.resize(src='/images/'+ page.image, alt='guitare')
+					.col-sm-6.col-xs-12.text
+						p.img_text!=page.description
+							
+						.caracteristique
+							h4 Caractéristiques :
+
+							ul
+								li='>> Référence : ' + page.reference
+								li='>> Marque : ' + page.marque
+								li='>> Bois utilisée : ' + page.bois_utilise

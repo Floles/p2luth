@@ -159,3 +159,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/linux,macos,windows,jetbrains,sublimetext
+
+#Fichiers du projet
+images/favicon2.tif
