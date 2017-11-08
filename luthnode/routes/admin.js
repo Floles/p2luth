@@ -151,6 +151,8 @@ router.get('/supprimer/produit-:id_products(\\d+)',function(req, res) {
 		} else {
 			res.redirect('/admin');
 		}
+	});
+});
 // GET update des textes du site
 router.get('/detail:id_cd(\\d+)', function (req, res) {
     connection.query('SELECT * FROM commercial_details WHERE id_cd = ?;', [req.params.id_cd], function (error, results) {
