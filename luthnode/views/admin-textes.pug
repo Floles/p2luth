@@ -18,16 +18,14 @@ html(lang='fr')
     a(href="/admin/details" class="btn btn-info") <- Liste
     br
     br
-    form(method="POST" enctype="multipart/form-data")
+    form(method="POST")
       .form-group
         label(for='Emplacement') Emplacement
-        input#title.form-control(type='text' placeholder='Emplacement' name="name" value=detail.name)
+        textarea#title.form-control(type='text' placeholder='Emplacement' name="name")!=detail.name
       .form-group
         label(for='Texte') Texte
-        input#title.form-control(type='text' placeholder='Texte' name="content" value=detail.content)
-      .form-group
-        label(for='exampleInputFile') File input
-        input#exampleInputFile(type='file' name="image")
+        textarea#title.form-control(type='text' placeholder='Texte' name="content")!=detail.content
+      
       button.btn.btn-default(type='submit') Modifier
 
 

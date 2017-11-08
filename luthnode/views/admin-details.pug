@@ -21,14 +21,12 @@ html(lang='fr')
             th #
             th Emplacement
             th Texte
-            th Image
             th Modification 
         each detail in commercial_details
             tr
                 td= detail.id_cd
                 td= detail.name
                 td= detail.content
-                td
-                    img(height=50 src='/images/'+ detail.image)
+                
                 td  
-                    a(href="/admin/textes/detail" + detail.id_cd) Modifier texte 
+                    a(href="/admin/detail" + detail.id_cd) Modifier texte 
