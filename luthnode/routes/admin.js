@@ -79,12 +79,15 @@ router.get('/update/produit:id_products(\\d+)', function (req, res) {
 
 // image à remettre dans la connection query (req.body.image, image = ?)
 router.post('/update/produit:id_products(\\d+)', upload.single('image'), function (req, res) {
-    if (req.file.size < (4 * 1024 * 1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
-        fs.rename(req.file.path, 'public/images/' + req.file.originalname);
-    } else {
-        res.send('Vous avez fait une erreur dans le téléchargement');
-    }
-    connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id_products = ?;', [req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname, req.params.id_products], function (error) {
+    if (req.file){
+        if (req.file.originalname.length < 241 && req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
+            fs.rename(req.file.path,'public/images/'+req.file.originalname);
+        } else {
+            res.render('admin-update',{message:'Attention, image de type png ou jpeg requis, 4Mo de poids maximum', body:req.body});
+        }}
+    connection.query('UPDATE products SET product = ?, reference = ?, marque = ?, bois_utilise = ?, description = ?, image = ? WHERE id_products = ?;', 
+    [req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname, req.params.id_products], 
+    function (error) {
         if (error) {
             console.log(error);
         } else {
