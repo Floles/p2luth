@@ -8,6 +8,43 @@ const connection = mysql.createConnection(config);
 
 connection.connect();
 
+// Page admin login/
+
+router.get('/admin-login', function(req, res, next) {
+	res.render('admin');
+});
+
+router.post('/admin-login', function(req, res, next) {
+    let fail = '';
+	let login= req.body.login;
+	let password = req.body.password;
+	connection.query(`select * from users where username="${login}" and passeword="${password}";`, 
+        function (error, results, fields){
+        if (results.length==0) {
+			res.send('erreur');
+		} else {
+			req.session.connected=true;
+			res.redirect('/admin');
+		}
+	});
+});
+//page log
+router.get('/logged', function(req, res, next) {
+    if(req.session.connected){
+        res.redirect('/admin');
+    }else{
+        res.redirect('/admin-login');
+    }
+});
+
+//disconnect
+router.get("/admin-logout", function(req, res, next) {
+    req.session.connected=false;
+    res.redirect('/admin-login');
+});
+
+/* A valider GET page Me contacter. */
+
 /* GET homepage */
 router.get('/', function (req, res, next) {
     res.render('index');

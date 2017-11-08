@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const Session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -12,13 +13,9 @@ var admin = require('./routes/admin');
 var app = express();
 
 // pour la page admin super protégée !
-/*app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true
-}));
-*/
 // view engine setup
+
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -29,9 +26,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+const FileStore = require('session-file-store')(Session);
+
+app.use(Session({
+store: new FileStore({
+path: path.join(__dirname, '/tmp'),
+encrypt: true
+}),
+secret: 'Super Secret !',
+resave: true,
+saveUninitialized: true,
+name : 'mysession'
+}));
+
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/admin', function (req, res, next) { 
+  console.log(req.session.connected);
+if (req.session.connected) {
+return next();
+} else {
+return res.redirect ('/admin-login')
+}
+});
 app.use('/admin', admin);
 
 
