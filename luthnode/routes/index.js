@@ -29,13 +29,11 @@ router.post('/admin-login', function(req, res, next) {
 });
 //page log
 router.get('/logged', function(req, res, next) {
-if(req.session.connected){
-res.redirect('/admin');
-}
-else{
-    res.redirect('/admin-login');
-}
-
+    if(req.session.connected){
+        res.redirect('/admin');
+    }else{
+        res.redirect('/admin-login');
+    }
 });
 
 //disconnect

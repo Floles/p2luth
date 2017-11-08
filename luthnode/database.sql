@@ -17,7 +17,7 @@ INSERT INTO posts VALUES (NULL, 'mon premier instrument', 'xxx', 'marque', 'bois
 
 CREATE TABLE users 
 (
-  id_user int(11) NO PRI NULL auto_increment,
+  id_user int(11) PRIMARY KEY NULL auto_increment,
   username varchar(45) NOT NULL ,
   passeword varchar(30) NOT NULL 
 );

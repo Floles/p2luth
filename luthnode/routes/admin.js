@@ -54,12 +54,9 @@ router.get('/', function(req, res, next) {
 			res.render('admin-index', {products:results});
 		};
 	});
-	
-    }
-    else{
+	} else{
         res.redirect('/admin-login')
     }
-
 });
 
 
