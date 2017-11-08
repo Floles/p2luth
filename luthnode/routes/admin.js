@@ -49,22 +49,21 @@ router.get('/create', function (req, res, next) {
 });
 
 // POST /admin/create
-router.post('/create', upload.single('image'), function(req, res, next) {
-	// Création d'article
-	if (req.file.size < (4*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
-		fs.rename(req.file.path,'public/images/'+ req.file.originalname);
-	} else {
-		res.send('Vous avez fait une erreur dans le téléchargement');
-	}
-	connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?, ?, ?);',
-	[req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname,req.body.button],
-	function(error, results, fields){
-		if (error) {
-			console.log(error);
-		} else {
-			res.redirect('/admin');
-		};
-	});
+router.post('/create', upload.single('image'), function (req, res, next) {
+    // Création d'article
+    if (req.file.size < (4 * 1024 * 1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
+        fs.rename(req.file.path, 'public/images/' + req.file.originalname);
+    } else {
+        res.send('Vous avez fait une erreur dans le téléchargement');
+    }
+    connection.query('INSERT INTO products VALUES(NULL, ?, ?, ?, ?, ?, ?, ?);', [req.body.product, req.body.reference, req.body.marque, req.body.bois_utilise, req.body.description, req.file.originalname, req.body.button],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.redirect('/admin');
+            };
+        });
 });
 
 // GET update
@@ -94,7 +93,7 @@ router.post('/update/produit:id_products(\\d+)', upload.single('image'), functio
 });
 
 // GET update des textes du site
-router.get('/textes/detail:id_cd(\\d+)', function (req, res) {
+router.get('/detail:id_cd(\\d+)', function (req, res) {
     connection.query('SELECT * FROM commercial_details WHERE id_cd = ?;', [req.params.id_cd], function (error, results) {
 
         res.render('admin-textes', {
@@ -103,23 +102,18 @@ router.get('/textes/detail:id_cd(\\d+)', function (req, res) {
     });
 });
 
-// image à remettre dans la connection query (req.body.image, image = ?)
-router.post('/textes/detail:id_cd(\\d+)', upload.single('image'), function (req, res) {
-    if (req.file.size < (4 * 1024 * 1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg')) {
-        fs.rename(req.file.path, 'public/images/' + req.file.originalname);
-    } else {
-        res.send('Vous avez fait une erreur dans le téléchargement');
-    }
-    connection.query('UPDATE commercial_details SET name = ?, content = ?, image = ? WHERE id_cd = ?;', [req.body.name, req.body.content, req.file.originalname, req.params.id_cd], function (error) {
+router.post('/detail:id_cd(\\d+)', function (req, res, next) {
+    connection.query('UPDATE commercial_details SET name = ?, content = ? WHERE id_cd = ?;', [req.body.name, req.body.content, req.params.id_cd], function (error) {
+        console.log(req.body);
         if (error) {
             console.log(error);
         } else {
-            res.redirect('/admin-details');
+            res.redirect('/admin/details');
         }
     });
 });
 
-// Delete
+// Delete des produits
 router.get('/supprimer/produit-:id_products(\\d+)', function (req, res) {
     connection.query('DELETE FROM products WHERE id_products = ?;', [req.params.id_products], function (error) {
         if (error) {
